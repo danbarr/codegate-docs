@@ -1,0 +1,4112 @@
+Below is all the contents of our docs: 
+
+
+
+ This is the content for the doc README.md 
+
+ # CodeGate docs <!-- omit in toc -->
+
+[![GitHub deployments](https://img.shields.io/github/deployments/stacklok/codegate-docs/Production?logo=vercel&style=flat&label=Vercel%20deployment)](https://github.com/stacklok/codegate-docs/deployments/Production)
+
+This repository contains the public-facing docs for CodeGate, hosted at
+[https://docs.codegate.ai](https://docs.codegate.ai).
+
+- [Contributing to docs](#contributing-to-docs)
+- [Local development](#local-development)
+- [Formatting](#formatting)
+- [Building the site](#building-the-site)
+- [Deployment](#deployment)
+- [About](#about)
+
+## Contributing to docs
+
+We welcome contributions to the CodeGate documentation - if you find something
+missing, wrong, or unclear, please let us know via an issue or open a PR!
+
+Please review the [style guide](./STYLE-GUIDE.md) for help with voice, tone, and
+formatting.
+
+## Local development
+
+You'll need Node.js available (v22 recommended) or VS Code with the
+[Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+extension and Docker.
+
+[![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/stacklok/codegate-docs)
+
+```bash
+npm install
+npm run start
+```
+
+This command starts a local development server on port 3000 and opens a browser
+window to <http://localhost:3000>. Most changes are reflected live without
+having to restart the server.
+
+## Formatting
+
+We use a combination of Prettier, markdownlint, and ESLint to normalize
+formatting and syntax. Before you submit a PR, please check for issues:
+
+```bash
+npm run prettier
+npm run markdownlint
+npm run eslint
+```
+
+To automatically fix issues:
+
+```bash
+npm run prettier:fix
+npm run markdownlint:fix
+npm run eslint:fix
+```
+
+## Building the site
+
+```bash
+npm run build
+```
+
+This command generates static content into the `build` directory. It also checks
+for broken links, so it's recommended to run this before submitting a PR.
+
+## Deployment
+
+The `docs.codegate.ai` site is published using Vercel. Automatic previews for
+branches and pull requests are enabled. The production site is published from
+the `main` branch.
+
+## About
+
+This site is built with [Docusaurus](https://docusaurus.io/), a modern static
+website generator.
+
+
+ This is the content for the doc STYLE-GUIDE.md 
+
+ # Style guide for CodeGate docs <!-- omit in toc -->
+
+This style guide is a reference for anyone who contributes to the user-facing
+CodeGate docs contained in this repository. By adhering to these guidelines, we
+aim to deliver clear, concise, and valuable information to CodeGate users.
+
+## Contents <!-- omit in toc -->
+
+- [Writing style](#writing-style)
+  - [Language](#language)
+  - [Tone and voice](#tone-and-voice)
+    - [Active voice](#active-voice)
+    - [Speak to the reader](#speak-to-the-reader)
+  - [Capitalization](#capitalization)
+  - [Punctuation](#punctuation)
+  - [Links](#links)
+  - [Formatting](#formatting)
+- [Screenshots and images](#screenshots-and-images)
+- [Markdown style](#markdown-style)
+- [Word list \& glossary](#word-list--glossary)
+  - [Products/brands](#productsbrands)
+
+## Writing style
+
+This list is not exhaustive, it is intended to reflect the most common and
+important style elements. For a more comprehensive guide that aligns with our
+style goals, or if you need more details about any of these points, refer to the
+[Google developer documentation style guide](https://developers.google.com/style).
+
+### Language
+
+The project's official language is **US English**.
+
+### Tone and voice
+
+Strive for a casual and conversational tone without becoming overly informal. We
+aim to be friendly and relatable while retaining credibility and professionalism
+– approachable yet polished.
+
+Avoid slang and colloquial expressions. Use clear, straightforward language and
+avoid overly complex jargon to make content accessible to a wide audience.
+
+#### Active voice
+
+Use **active voice** instead of passive voice. Active voice emphasizes the
+subject performing the action, making the writing more direct and engaging.
+Passive voice focuses on the recipient of the action rather than the actor,
+often resulting in unclear sentences and misinterpretation of responsibility.
+
+:white_check_mark: Yes: Replace `docker` with `podman` in all commands if you
+use Podman.\
+:x: No: `docker` should be replaced with `podman` in all commands if Podman is
+used.
+
+#### Speak to the reader
+
+Address the reader using the **second person** ("you", "your"). Avoid the first
+person ("we", "our") and third person ("the user", "a developer").
+
+### Capitalization
+
+Capitalize **proper nouns** like names, companies, and products. Generally,
+**don't** capitalize features or generic terms. For non-CodeGate terms, follow
+the norms of the third-party project/company (ex: npm is stylized in lowercase,
+even when it begins a sentence).
+
+:white_check_mark: Yes: CodeGate includes a web dashboard that lets you view...\
+:x: No: CodeGate includes a Web Dashboard that lets you view...
+
+Use **sentence case** in titles and headings.
+
+:white_check_mark: Yes: Alternative run commands\
+:x: No: Alternative Run Commands
+
+Use `ALL_CAPS` to indicate placeholder text/parameters, where the reader is
+expected to change a value.
+
+### Punctuation
+
+**Oxford comma**: use the Oxford comma (aka serial commas) when listing items in
+a series.
+
+:white_check_mark: Yes: CodeGate scans direct, transitive, and development
+dependencies.\
+:x: No: CodeGate scans direct, transitive and development dependencies.
+
+**Quotation marks**: use straight double quotes and apostrophes, not "fancy
+quotes" or "smart quotes" (the default in document editors like Word/Docs). This
+is especially important in code examples where smart quotes often cause syntax
+errors.
+
+Tip: if you are drafting in Google Docs, disable the "Use smart quotes" setting
+in the Tools → Preferences menu to avoid inadvertently copying smart quotes into
+Markdown or other code.
+
+### Links
+
+Use descriptive link text. Besides providing clear context to the reader, this
+improves accessibility for screen readers.
+
+:white_check_mark: Yes: For more information, see
+[Purpose and scope](?tab=t.0#heading=h.qaqvuha5efk).\
+:x: No: For more information, see
+[this section](?tab=t.0#heading=h.qaqvuha5efk).
+
+Note on capitalization: when referencing other docs/headings by title, use
+sentence case so the reference matches the corresponding title or heading.
+
+### Formatting
+
+**Bold**: use when referring to UI elements; prefer bold over quotes. For
+example: Click **Add Rule** and select the rule you want to add to the profile.
+
+**Italics**: emphasize particular words or phrases, such as when
+introducing/defining a term. For example: A _profile_ defines which security
+policies apply to your software supply chain.
+
+**Underscore**: do not use; reserved for links.
+
+**Code**: use a `monospaced font` for inline code or commands, code blocks, user
+input, filenames, method/class names, and console output.
+
+## Screenshots and images
+
+Considerations for screenshots and other images:
+
+- Don't over-use screenshots:
+  - Screenshots are useful for complex UIs or to point out specific elements
+    that are otherwise hard to describe with text. But for example, an input
+    form doesn't need a screenshot when text can just as easily list the fields
+    and their purpose.
+  - Screenshots age rapidly.
+  - Too many screenshots can become visually overwhelming and interrupt the flow
+    of documentation.
+- Don't use images of text, code samples, or terminal output. Use actual text so
+  readers can copy/paste and find the contents via search engines.
+- Use alt text to describe images for readers using screen readers and to assist
+  search engines.
+- Be consistent when taking screenshots - use the same OS if possible (macOS has
+  been used in CodeGate docs to date) and zoom level (ex: zoom twice in VS Code,
+  125% in browsers).
+- Crop screenshots to the relevant portion of the interface.
+- Use the primary brand color (`#5058ff`) for annotations like callouts and
+  highlight boxes.
+
+## Markdown style
+
+Just like a consistent writing style is critical to clarity and messaging,
+consistent formatting and syntax are needed to ensure the maintainability of
+Markdown-based documentation.
+
+We generally adopt the
+[Google Markdown style guide](https://google.github.io/styleguide/docguide/style.html),
+which is well-aligned with default settings in formatting tools like Prettier
+and `markdownlint`.
+
+Our preferred style elements include:
+
+- Headings: use "ATX-style" headings (hash marks - `#` for Heading 1, `##` for
+  Heading 2, and so on); use unique headings within a document
+- Unordered lists: use hyphens (`-`), not asterisks (`*`)
+- Ordered lists: use lazy numbering (`1.` for every item and let Markdown render
+  the final order – this is more maintainable when inserting new items)
+  - Note: this is a "soft" recommendation. It is also intended only for Markdown
+    documents that are read through a rendering engine. If the Markdown will be
+    consumed in raw form, use real numbering.
+- Code blocks: use fenced code blocks (` ``` ` to begin/end) and explicitly
+  declare the language, like ` ```python ` or ` ```plain `
+- Add blank lines around headings, lists, and code blocks
+- No trailing whitespace on lines
+  - Use the `\` character at the end of a line for a single-line break, not the
+    two-space syntax which is easy to miss
+- Line limit: wrap lines at 80 characters; exceptions for links, tables,
+  headings, and code blocks
+
+Specific guidelines for Docusaurus:
+
+- Heading 1 is reserved for the page title, typically defined in the Markdown
+  front matter section. Sections within a page begin with Heading 2 (`##`).
+  [Reference](https://docusaurus.io/docs/markdown-features/toc)
+- Use relative file links (with .md/.mdx extensions) when referring to other
+  pages. [Reference](https://docusaurus.io/docs/markdown-features/links)
+- Use the .mdx extension for pages containing JSX includes. Docusaurus v3
+  currently runs all .md and .mdx files through an MDX parser but this will
+  change in a future version.
+  [Reference](https://docusaurus.io/docs/migration/v3#using-the-mdx-extension)
+- Use the front matter section on all pages. At a minimum, set the `title` (this
+  is rendered into the page as an H1) and a short `description`.
+  [Reference](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter)
+- Place images in `static/img` using WebP, PNG, or SVG format.
+- Use the
+  [`ThemedImage` component](https://docusaurus.io/docs/markdown-features/assets#themed-images)
+  to provide both light and dark mode screenshots for apps/UIs that support
+  both.
+
+## Word list & glossary
+
+Common terms used in CodeGate content:
+
+**CodeGate**: this project! It's written bi-capitalized as one word (not
+"Codegate" or "Code Gate").
+
+**open source**: we prefer using two words over the hyphenated form (not
+"open-source"). It's not a proper noun, so don't capitalize unless it starts a
+sentence.
+
+**OSS**: abbreviation for "open source software".
+
+**Stacklok**: the company that makes CodeGate.
+
+### Products/brands
+
+**aider** - an open source AI pair programmer in your terminal. It's written
+lowercase unless it starts a sentence.
+
+**Continue** - an open source AI coding assistant for IDEs that connects to many
+model providers. It's written as just "Continue" (not "Continue.dev", which is
+their website).
+
+**Copilot** - GitHub's AI coding assistant. It's written with only a leading
+capital (not "CoPilot").
+
+**Git**: the most popular distributed version control system. It underpins most
+commercial VCS offerings like GitHub, Bitbucket, and GitLab. Unless specifically
+referring to the `git` command line tool, it's a proper noun and should be
+capitalized.
+
+**GitHub**: the most popular source code hosting provider, especially for open
+source. It's written bi-capitalized as one word (not "Git Hub" or "Github").
+
+**JetBrains**: a company that makes IDEs for many languages, including IntelliJ
+IDEA, PyCharm, GoLand, and more. It's written bi-capitalized as one word (not
+"Jet Brains" or "Jetbrains"). It's proper to reference a specific JetBrains IDE
+when needed, or simply refer to "all JetBrains IDEs".
+
+**npm**: the registry for JavaScript packages (the "npm registry"), and the
+default package manager for JavaScript. Since it's both the registry _and_ the
+package manager, it may be useful to disambiguate "the npm registry". It's not
+an abbreviation, so it's not capitalized; it's written all lowercase (not
+"NPM").
+
+**Visual Studio Code**: a very popular free integrated development environment
+(IDE) from Microsoft. Per Microsoft's
+[brand guidelines](https://code.visualstudio.com/brand#brand-name), use the full
+"Visual Studio Code" name the first time you reference it. "VS Code" is an
+acceptable short form after the first reference. It's written as two words and
+there are no other abbreviations/acronyms (not "VSCode", "VSC", or just "Code").
+
+<!-- markdownlint-disable-file MD044 -->
+
+
+ This is the content for the doc docs/about/changelog.md 
+
+ ---
+title: Changelog
+description: History of notable updates and changes to CodeGate
+sidebar_position: 20
+---
+
+:::info
+
+Major features and changes are noted here. To review all updates, see the
+[GitHub Releases page](https://github.com/stacklok/codegate/releases).
+
+:::
+
+Related: [Upgrade CodeGate](../how-to/install.mdx#upgrade-codegate)
+
+- **Request type muxing** - 26 Feb, 2025\
+  Workspace model muxing now supports filtering based on chat and FIM request
+  types. Check the [model muxing docs](../features/muxing.mdx) to learn more.
+
+- **New integration: Open Interpreter** - 20 Feb, 2025\
+  CodeGate v0.1.24 adds support for the
+  [avante.nvim](https://github.com/yetone/avante.nvim) plugin for Neovim with
+  OpenAI and CodeGate muxing. See the
+  [integration guide](../integrations/avante.mdx) to get started.
+
+- **Muxing filter rules** - 18 Feb, 2025\
+  CodeGate v0.1.23 adds filter rules for model muxing, allowing you to define
+  which model should be used for a given file type. See the
+  [model muxing docs](../features/muxing.mdx) for more.
+
+- **PII redaction:** - 10 Feb, 2025\
+  Starting with v0.1.18, CodeGate now redacts personally identifiable
+  information (PII) found in LLM prompts and context. See the
+  [feature page](../features/secrets-redaction.md) to learn more.
+
+- **Model muxing** - 7 Feb, 2025\
+  With CodeGate v0.1.17 you can use the new `/v1/mux` endpoint to configure
+  model selection based on your workspace! Learn more in the
+  [model muxing guide](../features/muxing.mdx).
+
+- **OpenRouter endpoint** - 7 Feb, 2025\
+  CodeGate v0.1.17 adds a dedicated `/openrouter` provider endpoint for
+  OpenRouter users. This endpoint currently works with Continue, Cline, and Kodu
+  (Claude Coder).
+
+- **New integration: Open Interpreter** - 4 Feb, 2025\
+  CodeGate v0.1.16 added support for
+  [Open Interpreter](https://github.com/openinterpreter/open-interpreter) with
+  OpenAI-compatible APIs. Review the
+  [integration guide](../integrations/open-interpreter.mdx) to get started.
+
+- **New integration: Claude Coder** - 28 Jan, 2025\
+  CodeGate v0.1.14 also introduced support for Kodu's
+  [Claude Coder](https://www.kodu.ai/extension) extension. See the
+  [integration guide](../integrations/kodu.mdx) to learn more.
+
+- **New integration: Cline** - 28 Jan, 2025\
+  CodeGate version 0.1.14 adds support for [Cline](https://cline.bot/) with
+  Anthropic, OpenAI, Ollama, and LM Studio. See the
+  [integration guide](../integrations/cline.mdx) to learn more.
+
+- **Workspaces** - 22 Jan, 2025\
+  Now available in CodeGate v0.1.12, workspaces help you organize and customize
+  your AI-assisted development. Learn more in
+  [Workspaces](../features/workspaces.mdx).
+
+- **New integration: aider** - 13 Jan, 2025\
+  CodeGate version 0.1.6 adds support for [aider](https://aider.chat/), an AI
+  pair programmer in your terminal. See the
+  [integration guide](../integrations/aider.mdx) to learn more.
+
+- **Semantic versioning for container image** - 8 Jan, 2025\
+  Starting with v0.1.4, the CodeGate container image is published with semantic
+  version tags corresponding to
+  [GitHub releases](https://github.com/stacklok/codegate/releases). You can
+  optionally pull using the major (`v0`), minor (`v0.1`), or patch version
+  (`v0.1.4`) to explicitly control the version you're running. \
+  CodeGate is evolving quickly, so we still recommend pulling the `latest` tag
+  so you don't miss out on the newest features and updates.
+
+- **UI port change** - 7 Jan, 2025\
+  The internal port for the dashboard UI has changed from 80 to 9090 to resolve
+  a permissions issue for Linux users.
+
+- **Introducing CodeGate!** - 17 Dec, 2024\
+  Initial public launch of CodeGate, with support for Continue and GitHub
+  Copilot.
+
+
+ This is the content for the doc docs/about/contributing.md 
+
+ ---
+title: Contributing
+description: How to contribute to CodeGate
+sidebar_position: 30
+---
+
+CodeGate is an open source (Apache-2.0) project maintained by
+[Stacklok](https://www.stacklok.com), and we welcome contributions from the
+community. There are several ways to contribute to CodeGate, including reporting
+bugs, suggesting new features, and submitting pull requests with code changes.
+
+## Reporting security vulnerabilities
+
+If you think you have found a security vulnerability in CodeGate, please DO NOT
+disclose it publicly until we've had a chance to fix it. Please don't report
+security vulnerabilities using GitHub issues; instead, please refer to the
+process outlined in the project's
+[security policy](https://github.com/stacklok/codegate/security/policy).
+
+## Creating GitHub issues
+
+GitHub issues are used to track feature requests and bug reports. If you have a
+general usage question, please ask in the `#codegate` channel on
+[Discord](https://discord.gg/stacklok). To report a bug or request a feature,
+create a new issue in the
+[CodeGate GitHub repository](https://github.com/stacklok/codegate/issues).
+
+## Contributing code or docs
+
+CodeGate's code and docs are managed in several repositories:
+
+- Main repo: https://github.com/stacklok/codegate
+- Dashboard UI: https://github.com/stacklok/codegate-ui
+- Docs: https://github.com/stacklok/codegate-docs
+
+If you've found an issue you'd like to work on, you can contribute code to
+CodeGate by submitting a pull request. Before you submit a pull request, please
+review the
+[Pull request process](https://github.com/stacklok/codegate/blob/main/CONTRIBUTING.md#pull-request-process).
+
+Thank you for taking the time to contribute to CodeGate!
+
+The full guide to contributing is available in our
+[Contributor Guidelines](https://github.com/stacklok/codegate/blob/main/CONTRIBUTING.md)
+in the CodeGate repository.
+
+
+ This is the content for the doc docs/about/faq.md 
+
+ ---
+title: Frequently asked questions
+description: Frequently asked questions about the CodeGate project
+sidebar_label: FAQ
+sidebar_position: 10
+---
+
+### Does CodeGate replace my AI coding assistant or agent?
+
+No, CodeGate works _with_ your AI coding tool, as a local intermediary between
+your client and the LLM it's communicating with.
+
+### Does CodeGate work with any other IDE plugins or coding assistants?
+
+We are actively exploring additional integrations based on user feedback.
+[Join the community on Discord](https://discord.gg/stacklok) to let us know
+about your favorite AI coding tool!
+
+In theory, any tool that supports one of CodeGate's provider API endpoints
+should work, however we have encountered many edge cases depending on how the AI
+assistants and agents format their prompts and expect their responses, so your
+mileage may vary.
+
+### Don't AI coding tools already redact secrets for me?
+
+It may be surprising to learn that AI coding tools don't redact secrets for you.
+Through packet captures and logging, we've seen these tools routinely sending
+secrets and PII to remote LLM providers as they collect file contents to use as
+context.
+
+### Can I use CodeGate without an internet connection?
+
+Yes, CodeGate can be used without an internet connection as long as you have a
+local LLM server running. CodeGate is designed to work with local providers like
+Ollama, LM Studio, and vLLM. Once you have downloaded the container image,
+CodeGate has no external dependencies and can be run entirely offline.
+
+### How do I know if I'm running the latest version of CodeGate?
+
+The CodeGate dashboard includes a version update check which will alert you if a
+new version is available. You can also check the latest version of CodeGate on
+our [GitHub Releases page](https://github.com/stacklok/codegate/releases). To
+upgrade, see the [upgrade instructions](../how-to/install.mdx#upgrade-codegate)
+in the installation guide.
+
+### What kind of support is available for CodeGate?
+
+We offer community support through
+[GitHub Issues](https://github.com/stacklok/codegate/issues) and our
+[Discord server](https://discord.gg/stacklok).
+
+### How do I troubleshoot issues with CodeGate?
+
+If you encounter issues with CodeGate, please check the following:
+
+- Ensure you are using the latest version of CodeGate.
+- Check the container logs for any error messages or warnings. Run
+  `docker logs codegate` to view the logs. You can also increase the logging
+  verbosity by re-launching CodeGate with `CODEGATE_APP_LOG_LEVEL` set to `INFO`
+  or `DEBUG` (see [advanced configuration](../how-to/configure.md)).
+- Search the [GitHub Issues](https://github.com/codegate/codegate/issues) for
+  similar issues or report a new issue if you can't find a solution.
+- Join our [Discord server](https://discord.gg/stacklok) to ask for help from
+  the community or the CodeGate team.
+
+### Can I use CodeGate in a team environment?
+
+Currently, CodeGate is designed to run on a single machine, but we are always
+eager to hear feedback about how you would like or expect to use CodeGate in a
+team environment. Please share your ideas/feedback in the
+[Feature Ideas section](https://github.com/stacklok/codegate/discussions/categories/feature-ideas)
+in the project's GitHub Discussions or jump into our
+[Discord server](https://discord.gg/stacklok)!
+
+### Can I contribute to CodeGate?
+
+Yes! CodeGate is an open-source project, and we welcome contributions from the
+community. You can contribute by reporting issues, submitting pull requests, or
+helping with documentation. Please check our
+[contributing guidelines](./contributing.md).
+
+
+ This is the content for the doc docs/about/index.mdx 
+
+ ---
+title: About CodeGate
+description: Learn more about the CodeGate project
+---
+
+import DocCardList from '@theme/DocCardList';
+
+Learn more about the CodeGate project.
+
+<DocCardList />
+
+
+ This is the content for the doc docs/development/index.md 
+
+ ---
+title: Developer reference guides
+description: Learn how to build and develop CodeGate
+---
+
+If you are interested in learning more about the internals of CodeGate and how
+to contribute to the development of the project, refer to the developer guides
+in the main CodeGate GitHub repo.
+
+- [Development guide](https://github.com/stacklok/codegate/blob/main/docs/development.md)
+- [CLI commands and flags](https://github.com/stacklok/codegate/blob/main/docs/cli.md)
+- [Configuration system](https://github.com/stacklok/codegate/blob/main/docs/configuration.md)
+- [Logging system](https://github.com/stacklok/codegate/blob/main/docs/logging.md)
+- [Debugging clients](https://github.com/stacklok/codegate/blob/main/docs/debugging_clients.md)
+- [Workspaces](https://github.com/stacklok/codegate/blob/main/docs/workspaces.md)
+
+
+ This is the content for the doc docs/features/dependency-risk.md 
+
+ ---
+title: Dependency risk awareness
+description: Protection from malicious or vulnerable dependencies
+---
+
+## What's the risk?
+
+The large language models (LLMs) that drive AI coding assistants are incredibly
+costly and time-consuming to train. That's why each one has a "knowledge cutoff
+date" which is often months or even years in the past. For example, GPT-4o's
+training cutoff was October 2023.
+
+But the open source software ecosystem moves quickly, and so do malicious actors
+seeking to exploit the software supply chain. LLMs often suggest outdated,
+vulnerable, or nonexistent packages, exposing you and your users to security and
+privacy risks.
+
+## How CodeGate helps
+
+CodeGate's dependency risk insight helps protect your codebase from malicious or
+vulnerable dependencies. It identifies potentially risky packages and suggests
+fixed versions or alternative packages to consider.
+
+These insights are powered by [Stacklok Insight](https://www.trustypkg.dev), a
+free-to-use open source dependency intelligence service.
+
+## How it works
+
+CodeGate scans direct, transitive, and development dependencies in your package
+definition files, installation scripts, and source code imports that you supply
+as context to an LLM. It also recognizes packages you mention in a prompt or the
+LLM suggests in its response.
+
+To explicitly invoke this scan, include your dependencies file
+(`package-lock.json`, `requirements.txt`, `go.mod`, etc.) as context, or mention
+a package in your prompt, and request a dependency security scan using a prompt
+similar to these:
+
+```plain
+Please scan the @go.mod file for security risks
+```
+
+```plain
+Is python-oauth2 from pypi ok to use?
+```
+
+CodeGate responds with analysis, insights, and recommendations about your
+package dependencies.
+
+
+ This is the content for the doc docs/features/index.mdx 
+
+ ---
+title: CodeGate features
+description: Explore CodeGate's features
+---
+
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />
+
+
+ This is the content for the doc docs/features/muxing.mdx 
+
+ ---
+title: Model muxing
+description: Pick the right LLM for the job
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import ThemedImage from '@theme/ThemedImage';
+
+## Overview
+
+_Model muxing_ (or multiplexing), allows you to configure your AI assistant once
+and use [CodeGate workspaces](./workspaces.mdx) to switch between LLM providers
+and models without reconfiguring your development environment. This feature is
+especially useful when you're working on multiple projects or tasks that require
+different AI models.
+
+In each of your CodeGate workspaces, you can select the AI provider and model
+combinations to use, even dynamically switching the active model based on the
+request type and file types found in your prompt. Then, configure your AI coding
+tool to use the CodeGate muxing endpoint `http://localhost:8989/v1/mux` as an
+OpenAI-compatible API provider.
+
+To change the model(s) currently in use, simply switch your active CodeGate
+workspace.
+
+```mermaid
+flowchart LR
+    Client(AI Assistant<br>or Agent)
+    CodeGate{CodeGate}
+    WS1[Workspace-A]
+    WS2[Workspace-B]
+    WS3[Workspace-C]
+    LLM1(OpenAI/<br>o3-mini)
+    LLM2(Ollama/<br>deepseek-r1)
+    LLM3(OpenRouter/<br>claude-35-sonnet)
+
+    Client ---|/v1/mux| CodeGate
+    CodeGate --> WS1
+    CodeGate --> WS2
+    CodeGate --> WS3
+    WS1 --> |FIM requests| LLM1
+    WS1 --> |Chat| LLM2
+    WS2 --> |.md files| LLM2
+    WS2 --> |.js files| LLM3
+    WS3 --> |All prompts| LLM3
+```
+
+## Use cases
+
+- You have a project that requires a specific model for a particular task, but
+  you also need to switch between different models during the course of your
+  work.
+- You're working in a monorepo with several different languages/file types and
+  want to dynamically switch to an optimal model as you move between different
+  parts of the codebase.
+- You want to experiment with different LLM providers and models without having
+  to reconfigure your AI assistant/agent every time you switch.
+- Your AI coding assistant doesn't support a particular provider or model that
+  you want to use. CodeGate's muxing provides an OpenAI-compatible abstraction
+  layer.
+- You're working on a sensitive project and want to use a local model, but still
+  have the flexibility to switch to hosted models for other work.
+- You want to control your LLM provider spend by using lower-cost models for
+  some tasks that don't require the power of more advanced (and expensive)
+  reasoning models.
+
+## Configure muxing
+
+To use muxing with your AI coding assistant, you need to add one or more AI
+providers to CodeGate, then select the model(s) you want to use on a workspace.
+
+CodeGate supports the following LLM providers for muxing:
+
+- Anthropic
+- llama.cpp
+- LM Studio
+- Ollama
+- OpenAI (and compatible APIs)
+- OpenRouter
+- vLLM
+
+### Add a provider
+
+1. In the [CodeGate dashboard](http://localhost:9090), open the **Providers**
+   page from the **Settings** menu.
+1. Click **Add Provider**.
+1. Enter a display name for the provider, then select the type from the
+   drop-down list. The default endpoint and authentication type are filled in
+   automatically.
+1. If you are using a non-default endpoint, update the **Endpoint** value.
+1. Optionally, add a **Description** for the provider.
+1. If the provider requires authentication, select the **API Key**
+   authentication option and enter your key.
+
+When you save the settings, CodeGate connects to the provider to retrieve the
+available models.
+
+:::note
+
+For locally-hosted models, you must use `http://host.docker.internal` instead of
+`http://localhost` when running CodeGate with Docker Desktop.
+
+:::
+
+### Configure workspace models
+
+Open the settings of one of your [workspaces](./workspaces.mdx) from the
+workspace selection menu or the
+[Manage Workspaces](http://localhost:9090/workspaces) screen.
+
+In the **Model Muxing** section, select the default ("catch-all") model to use
+with the workspace.
+
+To assign a different model based on request type or filename, click **Add
+Filter**.
+
+In the **Request Type** column, select the type of prompt to match:
+
+- `FIM & Chat` matches all prompt types
+- `FIM` matches fill-in-the-middle (completion) requests
+- `Chat` matches chat prompts
+
+In the **Filter by** column, enter a pattern for file name matching. Filters can
+be an exact match or Unix shell-style wildcards
+([reference](https://docs.python.org/3/library/fnmatch.html)). Common examples:
+
+- Match a specific file extension: `*.go`
+- Match files ending in ".ts" and ".tsx": `*.ts*`
+- Match all Python files starting with "test*": `test*\*.py`
+
+Finally, select the model to use for prompts that match the rule.
+
+Filter rules are evaluated top-down. CodeGate selects the active model for a
+request using the first matching rule. If the prompt contains multiple files in
+context, the first rule that matches _any_ of the files is used. If no filter is
+matched, the catch-all rule applies.
+
+#### Example configuration
+
+<ThemedImage
+  alt='An example showing several muxing rules for different file types'
+  sources={{
+    light: useBaseUrl('/img/features/muxing-rules-light.webp'),
+    dark: useBaseUrl('/img/features/muxing-rules-dark.webp'),
+  }}
+  title='Example muxing rules'
+  width={'800'}
+/>
+_An example showing muxing rules for several file types_
+
+Breaking down the above example:
+
+- All requests for Markdown files (`*.md`) use the gpt-4o-mini model via the
+  OpenAI provider.
+- Chat prompts for JavaScript and JSX files (`*.js*`) use claude-3.7-sonnet from
+  Anthropic.
+- FIM requests for all files _except_ `*.md` (since it's higher in the list) use
+  Ollama with the qwen2.5-coder:1.5b model.
+- All other requests use deepseek-r1 via OpenRouter.
+- A request containing both a JavaScript and Markdown file will match the `.md`
+  rule first and use OpenAI.
+
+You can validate which provider was used for a given request by checking the
+**conversation summary** in the CodeGate dashboard.
+
+### Manage existing providers
+
+To edit a provider's settings, click the Manage button next to the provider in
+the list. For providers that require authentication, you can leave the API key
+field blank to preserve the current value.
+
+To delete a provider, click the trash icon next to it. If this provider was in
+use by any workspaces, you will need to update their settings to choose a
+different provider/model.
+
+### Refresh available models
+
+To refresh the list of models available from a provider, in the Providers list,
+click the Manage button next to the provider to refresh, then save it without
+making any changes.
+
+## Configure your client
+
+Configure the OpenAI-compatible API base URL of your AI coding assistant/agent
+to `http://localhost:8989/v1/mux`. If your client requires a model name and/or
+API key, you can enter any values since CodeGate manages the model selection and
+authentication.
+
+For specific instructions, see the
+[integration guide](../integrations/index.mdx) for your client.
+
+
+ This is the content for the doc docs/features/secrets-redaction.md 
+
+ ---
+title: Secrets and PII redaction
+description: Keep your secrets a secret
+---
+
+## What's the risk?
+
+As you interact with an AI coding assistant, sensitive data like passwords
+access tokens, and even personally identifiable information (PII) can be
+unintentionally exposed to third-party providers through the code and files you
+share as context. Besides the privacy and regulatory implications of exposing
+this information, it may become part of the AI model's training data and
+potentially be exposed to future users.
+
+## How CodeGate helps
+
+CodeGate helps you protect sensitive information from being accidentally exposed
+to AI models and third-party AI provider systems by redacting detected secrets
+and PII found in your prompts.
+
+## How it works
+
+CodeGate automatically scans all prompts for secrets and PII. This happens
+transparently without requiring a specific prompt. Without interrupting your
+development flow, CodeGate protects your data by redacting secrets and
+anonymizing PII. These changes are made before the prompt is sent to the LLM and
+are restored when the result is returned to your machine.
+
+When a secret or PII is detected, CodeGate adds a message to the LLM's output
+and an alert is recorded in the [dashboard](../how-to/dashboard.md).
+
+:::info
+
+Since CodeGate runs locally, your secrets never leave your system unprotected.
+
+:::
+
+```mermaid
+sequenceDiagram
+    participant Client as AI coding<br>assistant
+    participant CodeGate as CodeGate<br>(local)
+    participant LLM as AI model<br>(remote)
+
+    Client ->> CodeGate: Prompt with<br>plaintext secrets/PII
+    activate CodeGate
+    CodeGate ->> LLM: Prompt with<br>redacted secrets/PII
+    deactivate CodeGate
+    activate LLM
+    note right of LLM: LLM only sees<br>redacted values
+    LLM -->> CodeGate: Response with<br>redacted data
+    deactivate LLM
+    activate CodeGate
+    CodeGate -->> Client: Response with<br>original data
+    deactivate CodeGate
+```
+
+CodeGate redacts secrets and anonymizes PII by replacing each string with a
+unique identifier on the fly, before sending the prompt to the LLM. This way,
+CodeGate protects your sensitive data without blocking your development flow.
+When the LLM returns a response, CodeGate matches up the identifier and replaces
+it with the original value.
+
+### Secrets filtering
+
+CodeGate uses pattern matching to detect secrets like:
+
+- API keys and tokens
+- Cloud provider credentials
+- Database credentials
+- Private keys and certificates
+- SSH keys
+
+For the full list of detected patterns, see the
+[signatures file](https://github.com/stacklok/codegate/blob/main/signatures.yaml)
+in the project repo.
+
+### PII redaction
+
+CodeGate scans for common types of PII including:
+
+- Email addresses
+- Phone numbers
+- Government identification numbers
+- Credit card numbers
+- Bank accounts and crypto wallet IDs
+
+
+ This is the content for the doc docs/features/security-reviews.md 
+
+ ---
+title: Security reviews
+description: Enhanced secure coding guidance
+---
+
+## What's the risk?
+
+AI assistants are powerful productivity tools for generating, improving, fixing,
+and explaining complex application code. However, AI models rarely incorporate
+secure coding practices as a primary consideration in their responses. This can
+expose your application to vulnerabilities like SQL injection, cross-site
+scripting (XSS), remote command execution (RCE), and more.
+
+## How CodeGate helps
+
+CodeGate performs security-centric code reviews, identifying insecure patterns
+or potential vulnerabilities to help you adopt more secure coding practices.
+
+## How it works
+
+When you mention "CodeGate" or "security" in a chat prompt, CodeGate enhances
+your prompt with security-centric language to help guide your LLM to provide
+more secure recommendations and code suggestions.
+
+### Example prompts
+
+```text
+Review the following Python files for potential security vulnerabilities:
+
+@app.py
+@main.py
+```
+
+```text
+Analyze the AuthUser function in @login.py for any security issues
+```
+
+
+ This is the content for the doc docs/features/workspaces.mdx 
+
+ ---
+title: Workspaces
+description: Organize and customize your project environments
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import ThemedImage from '@theme/ThemedImage';
+
+## Overview
+
+_Workspaces_ in CodeGate allow you to organize and customize your interactions
+with large language models (LLMs). Each workspace is a distinct environment with
+its own configuration and history, enabling personalized settings and efficient
+management of your projects or tasks.
+
+Examples might include workspaces for different projects you're working on, or
+for specific tasks like code reviews or generating documentation. You can add
+custom instructions to each workspace to customize its behavior suitable to the
+task at hand.
+
+## Key features
+
+Workspaces offer several key features:
+
+- **Custom instructions**: Customize your interactions with LLMs by augmenting
+  your AI assistant's system prompt, enabling tailored responses and behaviors
+  for different types of tasks. Choose from CodeGate's library of community
+  prompts or create your own.
+
+- [**Model muxing**](./muxing.mdx): Configure the LLM provider/model for each
+  workspace, allowing you to configure your AI assistant/agent once and switch
+  between different models on the fly. This is useful when working on multiple
+  projects or tasks that require different AI models.
+
+- **Prompt and alert history**: Your LLM interactions (prompt history) and
+  CodeGate security detections (alert history) are recorded in the active
+  workspace, allowing you to track and review past interactions.
+
+- **Token usage tracking**: CodeGate tracks LLM token usage per workspace,
+  allowing you to monitor and analyze consumption across different contexts or
+  projects. For example, this feature can help you manage costs by identifying
+  high-usage workspaces or optimize API usage by adjusting prompts to reduce
+  token consumption.
+
+- **Isolation**: Configurations and data in one workspace do not affect others,
+  providing clarity when reviewing your AI-assisted coding history and precision
+  in tailoring your custom instructions.
+
+:::tip Recommendations
+
+- Use workspaces to separate different projects or objectives, with customized
+  instructions to optimize your work in each focus area.
+- Switch your active workspace as you move between projects or tasks. This helps
+  you maintain your prompt and alert history for each project.
+- Regularly review and update your custom instructions to align with the
+  evolving needs of your projects.
+
+:::
+
+## Working with workspaces
+
+You can view and manage your workspaces from the
+[CodeGate dashboard](../how-to/dashboard.md)
+([http://localhost:9090](http://localhost:9090)) or using commands in your AI
+assistant's chat interface.
+
+:::info Default workspace
+
+CodeGate ships with a default workspace named `default`. This workspace cannot
+be renamed, archived, or deleted.
+
+:::
+
+Only one workspace is active at any one time, and all AI assistant interactions
+occur within that workspace.
+
+You can perform several actions on workspaces:
+
+- **Activate**: Activate a workspace for use. Only one workspace can be active
+  at a time.
+- **Add**: Create a new workspace.
+- **Rename**: Change the name of a workspace.
+- **Custom instructions**: Add custom instructions to augment your AI
+  assistant's system prompt.
+- **Archive**: Mark a workspace as archived without permanently deleting it. The
+  workspace is hidden from the available workspaces list, but can be restored
+  later. This is useful when you are not actively working on a project but may
+  want to come back to it in the future.
+- **Delete**: Permanently delete an archived workspace (CLI only).
+
+## Manage workspaces using the dashboard
+
+### Change the active workspace
+
+The currently active workspace is displayed at the top of the CodeGate dashboard
+interface. You can change the active workspace by expanding the workspace
+drop-down menu. Select the workspace you want to activate. You can also search
+by name to quickly find the desired workspace.
+
+<ThemedImage
+  alt='The workspace drop-down menu in the CodeGate dashboard'
+  sources={{
+    light: useBaseUrl('/img/features/workspace-menu-light.webp'),
+    dark: useBaseUrl('/img/features/workspace-menu-dark.webp'),
+  }}
+  title='Workspace menu'
+  width={'800px'}
+/>
+_The workspace menu in the CodeGate dashboard_
+
+### Manage workspaces
+
+To manage all your workspaces, select **Manage Workspaces** in the workspace
+menu.
+
+Click **Create** to add a new workspace. Workspace names can contain
+alphanumeric characters, hyphens (`-`), and underscores (`_`). Names are
+converted to lowercase, and must be unique.
+
+In the workspace list, open the menu (**...**) next to a workspace to
+**Activate**, **Edit**, or **Archive** the workspace.
+
+**Edit** opens the workspace settings page. From here you can rename the
+workspace, select the LLM provider and model (see [Model muxing](./muxing.mdx)),
+set the custom prompt instructions, or archive the workspace.
+
+**Archived** workspaces can be restored or permanently deleted from the
+workspace list or workspace settings screen.
+
+## Manage workspaces using the chat CLI
+
+You can manage workspaces using `codegate workspace` commands sent through your
+AI assistant's chat interface. To see all available commands, run:
+
+```text
+codegate workspace -h
+```
+
+### Create a workspace \{#add}
+
+To create a new workspace:
+
+```text
+codegate workspace add WORKSPACE_NAME
+```
+
+Replace `WORKSPACE_NAME` with a name for the new workspace. Names can only
+contain alphanumeric characters, hyphens (`-`), and underscores (`_`).
+
+### List workspaces \{#list}
+
+Get a list of all non-archived workspaces:
+
+```text
+codegate workspace list
+```
+
+The currently active workspace is indicated as **(active)** in the list.
+
+### Activate a workspace \{#activate}
+
+Switch between workspaces using the `activate` command. The active workspace is
+the current environment for commands and configuration.
+
+```text
+codegate workspace activate WORKSPACE_NAME
+```
+
+Replace `WORKSPACE_NAME` with the name of the workspace to activate.
+
+### Customize the system prompt \{#custom-instructions}
+
+To add custom instructions to your system prompt:
+
+```text
+codegate custom-instructions [-w WORKSPACE_NAME] set SYSTEM_PROMPT
+```
+
+Replace `SYSTEM_PROMPT` with your custom prompt text. Optionally, specify the
+workspace to modify with `-w WORKSPACE_NAME`. If you don't explicitly set a
+workspace, the currently active workspace is modified.
+
+**Example**: Set a custom system prompt for the workspace named "project-alpha":
+
+```text
+codegate custom-instructions -w project-alpha set Start each conversation with "Welcome to Project Alpha Assistant. How can I help today?"
+```
+
+To show the current custom instructions on a workspace:
+
+```text
+codegate custom-instructions [-w WORKSPACE_NAME] show
+```
+
+To reset (clear) the custom instructions for a workspace:
+
+```text
+codegate custom-instructions [-w WORKSPACE_NAME] reset
+```
+
+### Rename a workspace \{#rename}
+
+To change the name of an existing workspace:
+
+```text
+codegate workspace rename WORKSPACE_NAME NEW_WORKSPACE_NAME
+```
+
+Replace `WORKSPACE_NAME` with the current name of the workspace, and
+`NEW_WORKSPACE_NAME` with the new name to set.
+
+### Archive a workspace \{#archive}
+
+To archive a workspace:
+
+```text
+codegate workspace archive WORKSPACE_NAME
+```
+
+Replace `WORKSPACE_NAME` with the name of the workspace to archive. You cannot
+archive the currently active workspace. Archived workspaces can be
+[restored](#restore) later or [permanently deleted](#delete).
+
+### List archived workspaces \{#list-archived}
+
+Get a list of all archived workspaces:
+
+```text
+codegate workspace list-archived
+```
+
+Archived workspaces can be [restored](#restore) or
+[permanently deleted](#delete), but cannot be activated.
+
+### Restore an archived workspace \{#restore}
+
+Use the `restore` command to recover an [archived](#archive) workspace. Once
+restored, a workspace will appear in your available [workspace list](#list) and
+can be [activated](#activate).
+
+```text
+codegate workspace restore WORKSPACE_NAME
+```
+
+Replace `WORKSPACE_NAME` with the name of the workspace to restore.
+
+### Permanently delete a workspace \{#delete}
+
+The `delete-archived` command permanently deletes an archived workspace.
+
+```text
+codegate workspace delete-archived WORKSPACE_NAME
+```
+
+Replace `WORKSPACE_NAME` with the name of the workspace to delete.
+
+:::warning
+
+Deletion is permanent. Ensure that the workspace is no longer needed and can be
+safely removed.
+
+:::
+
+
+ This is the content for the doc docs/how-to/configure.md 
+
+ ---
+title: Advanced configuration
+description: Customizing CodeGate's application settings
+sidebar_position: 30
+---
+
+## Customize CodeGate's behavior
+
+The CodeGate container runs with defaults that work with supported LLM providers
+using typical settings. To customize CodeGate's application settings like
+provider endpoints and logging level, you can add extra configuration parameters
+to the container as environment variables:
+
+```bash {2}
+docker run --name codegate -d -p 8989:8989 -p 9090:9090 \
+  [-e KEY=VALUE ...] \
+  --mount type=volume,src=codegate_volume,dst=/app/codegate_volume \
+  --restart unless-stopped ghcr.io/stacklok/codegate
+```
+
+## Config parameters
+
+CodeGate supports the following parameters:
+
+| Parameter                | Default value                       | Description                                                                                                                           |
+| :----------------------- | :---------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------ |
+| `CODEGATE_APP_LOG_LEVEL` | `WARNING`                           | Sets the logging level. Valid values: `ERROR`, `WARNING`, `INFO`, `DEBUG` (case sensitive)                                            |
+| `CODEGATE_LOG_FORMAT`    | `TEXT`                              | Type of log formatting. Valid values: `TEXT`, `JSON` (case sensitive)                                                                 |
+| `CODEGATE_ANTHROPIC_URL` | `https://api.anthropic.com/v1`      | Specifies the Anthropic engine API endpoint URL.                                                                                      |
+| `CODEGATE_LM_STUDIO_URL` | `http://host.docker.internal:1234`  | Specifies the URL of your LM Studio server.                                                                                           |
+| `CODEGATE_OLLAMA_URL`    | `http://host.docker.internal:11434` | Specifies the URL of your Ollama instance.                                                                                            |
+| `CODEGATE_OPENAI_URL`    | `https://api.openai.com/v1`         | Specifies the OpenAI engine API endpoint URL.                                                                                         |
+| `CODEGATE_VLLM_URL`      | `http://localhost:8000`             | Specifies the URL of the vLLM server to use.                                                                                          |
+| `DASHBOARD_API_BASE_URL` | `http://localhost:8989`             | Overrides the base URL of the CodeGate API referenced by the dashboard UI (see [run CodeGate on a remote host](#run-on-remote-host)). |
+
+### Example: Use CodeGate with a remote Ollama server
+
+Set the Ollama server's URL when you launch CodeGate:
+
+```bash {2}
+docker run --name codegate -d -p 8989:8989 -p 9090:9090 \
+  -e CODEGATE_OLLAMA_URL=https://my.ollama-server.example \
+  --mount type=volume,src=codegate_volume,dst=/app/codegate_volume \
+  --restart unless-stopped ghcr.io/stacklok/codegate
+```
+
+### Example: run CodeGate on a remote host {#run-on-remote-host}
+
+:::warning
+
+For security reason,s only run CodeGate on a remote host within a local or
+otherwise secured/trusted network. CodeGate should not be run on a remote host
+that is directly accessible from the Internet!
+
+:::
+
+The CodeGate web dashboard provided in the Docker container makes client-side
+API calls from your web browser, and expects the CodeGate API to be available on
+_localhost_ port 8989 by default. To run CodeGate on a different host from your
+client/browser, you can override this using the `DASHBOARD_API_BASE_URL`
+environment variable (available since CodeGate v0.1.28):
+
+```bash {2}
+docker run --name codegate -d -p 8989:8989 -p 9090:9090 \
+  -e DASHBOARD_API_BASE_URL=http://<REMOTE_HOST>:8989 \
+  --mount type=volume,src=codegate_volume,dst=/app/codegate_volume \
+  --restart unless-stopped ghcr.io/stacklok/codegate
+```
+
+Replace `<REMOTE_HOST>` with the IP or DNS name of your remote CodeGate host as
+reachable from your client / web browser.
+
+## Back up and restore the database
+
+CodeGate stores workspace configurations and event data in a SQLite database
+file located in the `/app/codegate_volume/db` directory inside the container.
+This database file is mounted to the persistent Docker volume on your host
+system. This means that the database file is not lost when you stop or remove
+the container, but it is still a good idea to back up the database file
+regularly. You might also want to copy or move your configuration to a different
+system.
+
+:::note
+
+The CodeGate container must be running to use these commands.
+
+:::
+
+### Back up
+
+To back up the database, you can use the `docker cp` command to copy the
+database file from the container to your host system. For example, if you want
+to back up the database to your current working directory, you can run the
+following command:
+
+```bash
+# Copy the database file from the container to your host system
+docker cp codegate:/app/codegate_volume/db/codegate.db ./codegate.db
+```
+
+This copies the database file from the container to your current working
+directory. You can then copy it to a safe location.
+
+### Restore
+
+You can also use this command to restore the database from a backup. For
+example, if you have a backup of the database file in your current working
+directory, you can restore it to the container by running:
+
+```bash
+# Copy the backup file to the container
+docker cp ./codegate.db codegate:/app/codegate_volume/db/codegate.db
+
+# Reset file ownership
+docker exec -u root codegate sh -c "chown codegate:codegate /app/codegate_volume/db/codegate.db"
+
+# Restart CodeGate
+docker restart codegate
+```
+
+
+ This is the content for the doc docs/how-to/dashboard.md 
+
+ ---
+title: Access the dashboard
+description: View alerts and usage history
+sidebar_position: 20
+---
+
+## Enable dashboard access
+
+CodeGate includes a web dashboard that lets you view the security risks that
+CodeGate has detected and a history of interactions between your AI coding
+assistant and your LLM.
+
+To access the dashboard, ensure port 9090 is bound to a port on your local
+system when you launch CodeGate, for example:
+
+```bash {2}
+docker run --name codegate -d -p 8989:8989 \
+  -p 9090:9090 \
+  --mount type=volume,src=codegate_volume,dst=/app/codegate_volume \
+  --restart unless-stopped ghcr.io/stacklok/codegate:latest
+```
+
+Open [http://localhost:9090](http://localhost:9090) in your web browser to view
+the dashboard.
+
+To use a different listening port on your host, replace the first `9090` with
+your desired port, like `-p YOUR_PORT:9090`. The dashboard will be available at
+`http://localhost:YOUR_PORT/`.
+
+:::note
+
+If you change the web dashboard port, some links returned by CodeGate's
+responses won't work without manually changing the port when they open in your
+browser.
+
+:::
+
+## Persisting dashboard data {#persisting-dashboard-data}
+
+To retain your prompt history and workspace configurations between restarts,
+mount a persistent
+[Docker volume](https://docs.docker.com/engine/storage/volumes/) to the CodeGate
+container. This example creates a volume named `codegate_volume`:
+
+```bash {2}
+docker run --name codegate -d -p 8989:8989 -p 9090:9090 \
+  --mount type=volume,src=codegate_volume,dst=/app/codegate_volume \
+  --restart unless-stopped ghcr.io/stacklok/codegate:latest
+```
+
+:::note
+
+The volume must be mounted to `/app/codegate_volume` inside the container. Do
+not modify the `dst` value of the `--mount` parameter in the `docker run`
+command.
+
+:::
+
+
+ This is the content for the doc docs/how-to/index.mdx 
+
+ ---
+title: Using CodeGate
+description: Learn how to install and use CodeGate
+---
+
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />
+
+
+ This is the content for the doc docs/how-to/install.mdx 
+
+ ---
+title: Install and upgrade
+description: Install and upgrade CodeGate using Docker
+sidebar_position: 10
+---
+
+import DefaultRunCommand from '../partials/_default-run-command.md';
+
+## Prerequisites
+
+CodeGate is distributed as a Docker container. You need a container runtime like
+Docker Desktop or Docker Engine. Podman and Podman Desktop are also supported.
+Windows, macOS, and Linux operating systems are all supported with x86_64 and
+arm64 (ARM and Apple Silicon) CPU architectures.
+
+These instructions assume you have the `docker` CLI available. If you use
+Podman, replace `docker` with `podman` in all commands.
+
+## Run CodeGate
+
+### Recommended settings
+
+To download and run CodeGate with the recommended configuration for full
+functionality:
+
+<DefaultRunCommand />
+
+Parameter reference:
+
+- `--name codegate` - give the container a friendly name for easy reference
+- `-d` - start in detached (background) mode
+- `-p 8989:8989` - bind the CodeGate API to port 8989 on your host (required)
+- `-p 9090:9090` - bind the CodeGate web dashboard to port 9090 on your host
+  (recommended)
+- `-p 8990:8990` - bind the CodeGate secure HTTP proxy to port 8990 on your host
+  (required for Copilot)
+- `--mount ...` - mount a persistent Docker volume named `codegate_volume` to
+  the required path in the container
+- `--restart unless-stopped` - restart CodeGate after a Docker or system
+  restart, unless you manually stop it
+
+More example run commands to run the container with the right parameters for
+your scenario are found below. To learn how to customize the CodeGate
+application settings, see [Configure CodeGate](./configure.md)
+
+:::warning
+
+If you omit the persistent volume mount, your
+[workspace configurations](../features/workspaces.mdx) and prompt history are
+lost when you stop or restart CodeGate.
+
+:::
+
+:::info
+
+CodeGate is primarily intended as a single-user system. The CodeGate API and web
+dashboard operate over unencrypted HTTP and with no authentication.
+
+If you are an advanced user who want to run CodeGate on a remote host in a
+secured/local network, see
+[Run CodeGate on a remote host](./configure.md#run-on-remote-host).
+
+:::
+
+### Alternative run commands \{#examples}
+
+Run with minimal functionality for use with **Continue**, **aider**, or
+**Cline** (omits the HTTP proxy port needed by Copilot):
+
+```bash
+docker run --name codegate -d -p 8989:8989 -p 9090:9090 --mount type=volume,src=codegate_volume,dst=/app/codegate_volume --restart unless-stopped ghcr.io/stacklok/codegate:latest
+```
+
+**Restrict ports:** Docker publishes ports to all interfaces on your host by
+default. This example publishes only on your `localhost` interface:
+
+```bash
+docker run --name codegate -d -p 127.0.0.1:8989:8989 -p 127.0.0.1:9090:9090 -p 127.0.0.1:8990:8990 --mount type=volume,src=codegate_volume,dst=/app/codegate_volume --restart unless-stopped ghcr.io/stacklok/codegate:latest
+```
+
+**Install a specific version:** starting with v0.1.4 you can optionally run a
+specific version of CodeGate using semantic version tags:
+
+- Patch version: `ghcr.io/stacklok/codegate:v0.1.15` (exact)
+- Minor version: `ghcr.io/stacklok/codegate:v0.1` (latest v0.1.x release)
+- Major version: `ghcr.io/stacklok/codegate:v0` (latest v0.x.x release)
+
+See the [GitHub releases](https://github.com/stacklok/codegate/releases) page
+for available versions.
+
+:::tip
+
+Record the `docker run` command you use to launch CodeGate. It will be a handy
+reference when you [upgrade CodeGate](#upgrade-codegate) in the future or if you
+need to [modify your configuration](./configure.md).
+
+:::
+
+### Next steps
+
+Now that CodeGate is running, proceed to
+[configure your AI assistant/agent](../integrations/index.mdx).
+
+## Networking
+
+CodeGate listens on several network ports:
+
+| Default host port | Container port (internal) | Purpose                                        |
+| :---------------- | :------------------------ | :--------------------------------------------- |
+| 9090              | 9090                      | CodeGate web dashboard                         |
+| 8989              | 8989                      | CodeGate API                                   |
+| 8990              | 8990                      | Secure HTTP proxy (GitHub Copilot integration) |
+
+Docker publishes ports to all network interfaces on your system by default. This
+can unintentionally expose your CodeGate installation to other systems on the
+same network. To restrict this, add `127.0.0.1` IP to the publish flags:
+
+- API: `-p 127.0.0.1:8989:8989`
+- HTTPS proxy: `-p 127.0.0.1:8990:8990`
+- Dashboard: `-p 127.0.0.1:9090:9090`
+
+All of the commands in these docs assume the default ports. To use different
+listening ports, modify the `-p` flag(s):
+
+- API: `-p YOUR_PORT:8989`
+- HTTPS proxy: `-p YOUR_PORT:8990`
+- Dashboard: `-p YOUR_PORT:9090`
+
+:::note
+
+If you change the web dashboard port, some links returned by CodeGate's
+responses won't work without manually updating the URL that opens in your
+browser.
+
+:::
+
+## View logs
+
+Use the `docker logs` command to view recent log messages:
+
+```bash
+docker logs codegate
+```
+
+Or to follow the log stream live (useful for troubleshooting), add the `-follow`
+flag:
+
+```bash
+docker logs --follow codegate
+```
+
+To update the logging verbosity, see [Advanced configuration](./configure.md).
+
+## Upgrade CodeGate
+
+To upgrade CodeGate to the latest version, start by reviewing the
+[Changelog](../about/changelog.md) for new features and breaking changes.
+
+Download the latest image:
+
+```bash
+docker pull ghcr.io/stacklok/codegate:latest
+```
+
+Stop and remove the current container:
+
+```bash
+docker rm --force codegate
+```
+
+Re-launch with the new image:
+
+<DefaultRunCommand />
+
+:::note
+
+If you customized your `docker run` command, use the same command you used
+originally.
+
+:::
+
+## Manage the CodeGate container
+
+Use standard `docker`/`podman` commands to manage the CodeGate container and
+persistent volume.
+
+## Uninstall
+
+If you decide to stop using CodeGate, undo the configuration changes you made to
+your [integration](../integrations/index.mdx) (usually by removing the API base
+URL setting or env var), then remove the CodeGate container and volume:
+
+```bash
+docker rm -f codegate
+docker volume rm codegate_volume
+```
+
+
+ This is the content for the doc docs/index.md 
+
+ ---
+title: Introduction
+description:
+  CodeGate is the local, open source prompt gateway that keeps your secrets safe
+  and your code secure.
+sidebar_position: 1
+---
+
+## What is CodeGate?
+
+CodeGate is a local prompt gateway that sits between your AI coding assistant
+and LLM to enhance privacy and security. CodeGate performs code security
+reviews, identifies vulnerabilities in package dependencies, and prevents
+sensitive data like secrets from being shared with AI models.
+
+```mermaid
+sequenceDiagram
+    participant Client as AI coding<br>assistant
+    participant CodeGate as CodeGate<br>(local)
+    participant LLM as AI model<br>(remote)
+
+    Client ->> CodeGate: Prompt
+    activate CodeGate
+    CodeGate ->> LLM: Enhanced prompt
+    deactivate CodeGate
+    activate LLM
+    LLM -->> CodeGate: Response
+    deactivate LLM
+    activate CodeGate
+    CodeGate -->> Client: Response
+    deactivate CodeGate
+```
+
+## Key features
+
+CodeGate includes several key features for privacy, security, and coding
+efficiency, including:
+
+- [Secrets PII redaction](./features/secrets-redaction.md) to protect your
+  sensitive credentials and anonymize personally identifiable information
+- [Dependency risk awareness](./features/dependency-risk.md) to update the LLM's
+  knowledge of malicious or deprecated open source packages
+- [Model muxing](./features/muxing.mdx) to quickly select the best LLM
+  provider/model for your current task
+- [Workspaces](./features/workspaces.mdx) to organize and customize your LLM
+  interactions
+
+## Supported environments
+
+CodeGate supports several development environments and AI providers.
+
+AI coding assistants / IDEs:
+
+- **[Aider](./integrations/aider.mdx)** with Ollama and OpenAI-compatible APIs
+
+- **[avante.nvim](./integrations/avante.mdx)** (Neovim plugin) with OpenAI
+
+- **[Cline](./integrations/cline.mdx)** in Visual Studio Code
+
+  CodeGate supports Ollama, Anthropic, OpenAI and compatible APIs, OpenRouter,
+  and LM Studio with Cline
+
+- **[Continue](./integrations/continue.mdx)** with Visual Studio Code and
+  JetBrains IDEs
+
+  CodeGate supports the following AI model providers with Continue:
+
+  - Local / self-managed: Ollama, llama.cpp, vLLM
+  - Hosted: Anthropic, OpenAI and compatible APIs, and OpenRouter
+
+- **[GitHub Copilot](./integrations/copilot.mdx)** with Visual Studio Code
+  (JetBrains coming soon!)
+
+- **[Kodu / Claude Coder](./integrations/kodu.mdx)** in Visual Studio Code with
+  OpenAI-compatible APIs
+
+- **[Open Interpreter](./integrations/open-interpreter.mdx)** with
+  OpenAI-compatible APIs
+
+We're continuing to add more AI assistants/agents and model providers based on
+community feedback.
+
+## How to get involved
+
+CodeGate is an open source project. To view the code, contribute, or report an
+issue, please visit the
+[CodeGate GitHub repository](https://github.com/stacklok/codegate).
+
+We are eager to gather feedback to help shape the future direction of the
+project. Please join us in the `#codegate` channel on the
+[Stacklok community Discord server](https://discord.gg/stacklok).
+
+## Next steps
+
+Follow one of the the quickstart guides to get up and running quickly:
+
+- [Quickstart guide - GitHub Copilot](./quickstart-copilot.mdx) to integrate
+  CodeGate with GitHub Copilot and VS Code
+- [Quickstart guide - Continue](./quickstart-continue.mdx) to integrate CodeGate
+  with the open source Continue extension, VS Code, and a local Ollama server
+
+Review the [installation instructions](./how-to/install.mdx).
+
+Learn more about CodeGate's features:
+
+- [Secrets and PII redaction](./features/secrets-redaction.md)
+- [Dependency risk awareness](./features/dependency-risk.md)
+- [Security reviews](./features/security-reviews.md)
+- [Workspaces](./features/workspaces.mdx)
+
+
+ This is the content for the doc docs/integrations/aider.mdx 
+
+ ---
+title: Use CodeGate with aider
+description: Configure aider to use CodeGate
+sidebar_label: Aider
+sidebar_position: 10
+---
+
+import AiderProviders from '../partials/_aider-providers.mdx';
+
+[Aider](https://aider.chat/) is an open source AI coding assistant that lets you
+pair program with LLMs in your terminal.
+
+CodeGate works with the following AI model providers through aider:
+
+- Local / self-managed:
+  - [Ollama](https://ollama.com/)
+- Hosted:
+  - [OpenAI](https://openai.com/api/) and OpenAI-compatible APIs
+
+You can also configure [CodeGate muxing](../features/muxing.mdx) to select your
+provider and model using [workspaces](../features/workspaces.mdx).
+
+:::note
+
+This guide assumes you have already installed aider using their
+[installation instructions](https://aider.chat/docs/install.html).
+
+:::
+
+## Configure aider to use CodeGate
+
+To configure aider to send requests through CodeGate:
+
+<AiderProviders />
+
+## Verify configuration
+
+To verify that you've successfully connected aider to CodeGate, type
+`/ask codegate version` into the aider chat in your terminal. You should receive
+a response like "CodeGate version 0.1.13".
+
+## Next steps
+
+Learn more about CodeGate's features:
+
+- [Access the dashboard](../how-to/dashboard.md)
+- [CodeGate features](../features/index.mdx)
+
+
+ This is the content for the doc docs/integrations/avante.mdx 
+
+ ---
+title: Use CodeGate with avante.nvim
+description: Configure the `avante.nvim` plugin for Neovim
+sidebar_label: avante.nvim
+sidebar_position: 15
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+**[avante.nvim](https://github.com/yetone/avante.nvim)** is a Neovim plugin that
+provides a Cursor-like user experience with multiple AI providers.
+
+CodeGate works with [OpenAI](https://openai.com/api/) and compatible APIs
+through Avante.
+
+You can also use [CodeGate muxing](../features/muxing.mdx) to select your
+provider and model using [workspaces](../features/workspaces.mdx).
+
+## Install avante.nvim
+
+Install the `avante.nvim` plugin using your preferred Neovim plugin manager. For
+detailed installation instructions, refer to Avante's
+[documentation](https://github.com/yetone/avante.nvim?tab=readme-ov-file#installation).
+
+:::tip
+
+You can also install [codegate.nvim](https://github.com/stacklok/codegate.nvim),
+a plugin that interfaces with CodeGate and allows you to quickly switch between
+workspaces without leaving Neovim.
+
+:::
+
+## Configure avante.nvim to use CodeGate
+
+Configure `avante.nvim` to route requests through CodeGate by setting its
+provider endpoint to `http://localhost:8989/<provider>`.
+
+Using [lazy.nvim](https://lazy.folke.io/) (recommended), configure the
+`avante.nvim` provider settings as shown:
+
+<Tabs groupId="provider" queryString="provider">
+<TabItem value="mux" label="CodeGate muxing" default>
+First, configure your [provider(s)](../features/muxing.mdx#add-a-provider) and
+select a model for each of your
+[workspace(s)](../features/workspaces.mdx#manage-workspaces) in the CodeGate dashboard.
+
+Then configure `avante.nvim` to use the CodeGate mux endpoint:
+
+```lua title="~/.config/nvim/lua/plugins/avante.lua"
+{
+  "yetone/avante.nvim",
+  -- ... etc ...
+  opts = {
+    provider = "openai",
+    openai = {
+      endpoint = "http://localhost:8989/v1/mux", -- CodeGate's mux endpoint
+      model = "gpt-4o", -- the actual model is determined by your CodeGate workspace
+      timeout = 30000, -- timeout in milliseconds
+      temperature = 0, -- adjust if needed
+      max_tokens = 4096,
+    },
+  },
+  -- ... etc ...
+}
+```
+
+</TabItem>
+<TabItem value="openai" label="OpenAI">
+You need an [OpenAI API](https://openai.com/api/) account to use this provider.
+To use a different OpenAI-compatible endpoint, set the `CODEGATE_OPENAI_URL`
+[configuration parameter](../how-to/configure.md) when you launch CodeGate.
+
+```lua title="~/.config/nvim/lua/plugins/avante.lua"
+{
+  "yetone/avante.nvim",
+  -- ... etc ...
+  opts = {
+    provider = "openai",
+    openai = {
+      endpoint = "http://localhost:8989/openai", -- CodeGate's OpenAI endpoint
+      model = "gpt-4o", -- your desired model
+      timeout = 30000, -- timeout in milliseconds
+      temperature = 0, -- adjust if needed
+      max_tokens = 4096,
+    },
+  },
+  -- ... etc ...
+}
+```
+
+</TabItem>
+</Tabs>
+
+:::note
+
+`avante.nvim` does not yet support _fill-in-the-middle_ (FIM) completions. You
+have to configure your FIM completion plugin separately.
+
+:::
+
+## Verify configuration
+
+To verify your setup:
+
+1. In Neovim, type `:AvanteChat` to launch the Avante interface.
+2. Enter the following prompt in the chat:
+   ```
+   add a variable AWS_ACCESS_KEY_ID="AKIAIOSFODNN7EXAMPLE"
+   ```
+3. The response should indicate that CodeGate redacted the secret, and an alert
+   is logged in the [dashboard](http://localhost:9090).
+
+:::info Known issue
+
+`codegate` commands like `codegate version` are not currently working with
+avante.nvim. We are
+[tracking this issue here](https://github.com/stacklok/codegate/issues/1061).
+
+:::
+
+## Next steps
+
+Learn more about [CodeGate's features](../features/index.mdx) and explore the
+[dashboard](../how-to/dashboard.md).
+
+
+ This is the content for the doc docs/integrations/cline.mdx 
+
+ ---
+title: Use CodeGate with Cline
+description: Configure the Cline extension for VS Code
+sidebar_label: Cline
+sidebar_position: 20
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import ThemedImage from '@theme/ThemedImage';
+
+[Cline](https://cline.bot/) is an autonomous coding agent for Visual Studio Code
+that supports numerous API providers and models.
+
+CodeGate works with the following AI model providers through Cline:
+
+- Local / self-managed:
+  - [Ollama](https://ollama.com/)
+  - [LM Studio](https://lmstudio.ai/)
+- Hosted:
+  - [Anthropic](https://www.anthropic.com/api)
+  - [OpenAI](https://openai.com/api/) and compatible APIs
+  - [OpenRouter](https://openrouter.ai/)
+
+You can also configure [CodeGate muxing](../features/muxing.mdx) to select your
+provider and model using [workspaces](../features/workspaces.mdx).
+
+## Install the Cline extension
+
+The Cline extension is available in the
+[Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev).
+
+Install the extension using the **Install** link on the Marketplace page or
+search for "Cline" in the Extensions panel within VS Code.
+
+You can also install from the CLI:
+
+```bash
+code --install-extension saoudrizwan.claude-dev
+```
+
+If you need help, see
+[Managing Extensions](https://code.visualstudio.com/docs/editor/extension-marketplace)
+in the VS Code documentation.
+
+## Configure Cline to use CodeGate
+
+import ClineProviders from '../partials/_cline-providers.mdx';
+
+:::note
+
+Cline has two modes: Plan and Act. Each mode can be uniquely configured with a
+different provider and model, so you need to configure both.
+
+:::
+
+To configure Cline to send requests through CodeGate:
+
+1. Open the Cline extension sidebar from the VS Code Activity Bar. Note your
+   current mode, Plan or Act.
+
+   <ThemedImage
+     alt='Cline mode - plan'
+     sources={{
+       light: useBaseUrl('/img/integrations/cline-mode-plan-light.webp'),
+       dark: useBaseUrl('/img/integrations/cline-mode-plan-dark.webp'),
+     }}
+     width={'400px'}
+   />
+   <ThemedImage
+     alt='Cline mode - act'
+     sources={{
+       light: useBaseUrl('/img/integrations/cline-mode-act-light.webp'),
+       dark: useBaseUrl('/img/integrations/cline-mode-act-dark.webp'),
+     }}
+     width={'400px'}
+   />
+
+1. Open the Cline settings using the gear icon.
+
+   <ThemedImage
+     alt='Cline extension settings'
+     sources={{
+       light: useBaseUrl('/img/integrations/cline-settings-light.webp'),
+       dark: useBaseUrl('/img/integrations/cline-settings-dark.webp'),
+     }}
+     width={'540px'}
+   />
+
+1. Select your provider and configure as detailed here:
+
+   <ClineProviders />
+
+1. Click **Done** to save the settings for your current mode.
+
+1. Switch your Cline mode from Act to Plan or vice-versa, open the settings, and
+   repeat the configuration for your desired provider & model.
+
+## Verify configuration
+
+To verify that you've successfully connected Cline to CodeGate, open the Cline
+sidebar and type `codegate version`. You should receive a response like
+"CodeGate version 0.1.14":
+
+<ThemedImage
+  alt='Cline verification'
+  sources={{
+    light: useBaseUrl('/img/integrations/cline-codegate-version-light.webp'),
+    dark: useBaseUrl('/img/integrations/cline-codegate-version-dark.webp'),
+  }}
+  width={'490px'}
+/>
+
+Try asking CodeGate about a known malicious Python package:
+
+```plain title="Cline chat"
+Tell me how to use the invokehttp package from PyPI
+```
+
+CodeGate responds with a warning and a link to the Stacklok Insight report about
+this package:
+
+```plain title="Cline chat"
+Warning: CodeGate detected one or more malicious, deprecated or archived packages.
+
+ • invokehttp: https://www.insight.stacklok.com/report/pypi/invokehttp
+
+The `invokehttp` package from PyPI has been identified as malicious and should
+not be used. Please avoid using this package and consider using a trusted
+alternative such as `requests` for making HTTP requests in Python.
+
+Here is an example of how to use the `requests` package:
+
+...
+```
+
+## Next steps
+
+Learn more about CodeGate's features and how to use them:
+
+- [Access the dashboard](../how-to/dashboard.md)
+- [CodeGate features](../features/index.mdx)
+
+
+ This is the content for the doc docs/integrations/continue.mdx 
+
+ ---
+title: Use CodeGate with Continue
+description: Configure the Continue IDE plugin
+sidebar_label: Continue
+sidebar_position: 30
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import ThemedImage from '@theme/ThemedImage';
+
+[Continue](https://www.continue.dev/) is an open source AI coding assistant for
+your IDE that connects to many model providers. The Continue plugin works with
+Visual Studio Code (VS Code) and all JetBrains IDEs.
+
+CodeGate works with the following AI model providers through Continue:
+
+- Local / self-managed:
+  - [Ollama](https://ollama.com/)
+  - [vLLM](https://docs.vllm.ai/en/latest/serving/openai_compatible_server.html)
+  - [llama.cpp](https://github.com/ggerganov/llama.cpp) (advanced)
+- Hosted:
+  - [Anthropic](https://www.anthropic.com/api)
+  - [OpenAI](https://openai.com/api/)
+  - [OpenRouter](https://openrouter.ai/)
+
+You can also configure [CodeGate muxing](../features/muxing.mdx) to select your
+provider and model using [workspaces](../features/workspaces.mdx).
+
+## Install the Continue plugin
+
+<Tabs groupId="ide">
+  <TabItem value="vscode" label="VS Code" default>
+    The Continue extension is available in the
+    [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Continue.continue).
+
+    Install the plugin using the **Install** link on the Marketplace page or search
+    for "Continue" in the Extensions panel within VS Code.
+
+    You can also install from the CLI:
+
+    ```bash
+    code --install-extension Continue.continue
+    ```
+
+    If you need help, see
+    [Managing Extensions](https://code.visualstudio.com/docs/editor/extension-marketplace)
+    in the VS Code documentation.
+
+  </TabItem>
+  <TabItem value="jetbrains" label="JetBrains">
+    The Continue plugin is available in the
+    [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/22707-continue) and
+    is compatible with all JetBrains IDEs including IntelliJ IDEA, GoLand, PyCharm,
+    and more.
+
+    Install the plugin from your IDE settings. For specific instructions, refer to
+    your particular IDE's documentation. For example:
+
+    - [IntelliJ IDEA - Install plugins](https://www.jetbrains.com/help/idea/managing-plugins.html)
+    - [GoLand - Plugins](https://www.jetbrains.com/help/go/managing-plugins.html)
+    - [PyCharm - Install plugins](https://www.jetbrains.com/help/pycharm/managing-plugins.html)
+
+  </TabItem>
+</Tabs>
+
+## Configure Continue to use CodeGate
+
+To configure Continue to send requests through CodeGate:
+
+1. Set up the [chat](https://docs.continue.dev/chat/model-setup) and
+   [autocomplete](https://docs.continue.dev/autocomplete/model-setup) settings
+   in Continue for your desired AI model(s).
+
+1. Open the Continue [configuration file](https://docs.continue.dev/reference),
+   `~/.continue/config.json`. You can edit this file directly or access it from
+   the gear icon ("Configure Continue") in the Continue chat interface.
+
+   <ThemedImage
+     alt='Continue extension settings'
+     sources={{
+       light: useBaseUrl('/img/quickstart/continue-config-light.webp'),
+       dark: useBaseUrl('/img/quickstart/continue-config-dark.webp'),
+     }}
+     width={'540px'}
+   />
+
+1. Add the `apiBase` property to the `models` entry (chat) and
+   `tabAutocompleteModel` (autocomplete) sections of the configuration file.
+   This tells Continue to use the CodeGate CodeGate container running locally on
+   your system as the base URL for your LLM API, instead of the default.
+
+   ```json
+   "apiBase": "http://127.0.0.1:8989/<provider>"
+   ```
+
+   Replace `/<provider>` with one of: `/v1/mux` (for CodeGate muxing),
+   `/anthropic`, `/ollama`, `/openai`, `/openrouter`, or `/vllm` to match your
+   LLM provider.
+
+   If you used a different API port when launching the CodeGate container,
+   replace `8989` with your custom port number.
+
+1. Save the configuration file.
+
+:::note
+
+JetBrains users: restart your IDE after editing the config file.
+
+:::
+
+Below are examples of complete Continue configurations for each supported
+provider. Replace the values in ALL_CAPS. The configuration syntax is the same
+for VS Code and JetBrains IDEs.
+
+<Tabs groupId="provider" queryString="provider">
+<TabItem value="mux" label="CodeGate muxing" default>
+
+:::info Known issues
+
+**Auto-completion support**: currently, CodeGate muxing does not work with
+Continue's `tabAutocompleteModel` setting for fill-in-the-middle (FIM). We are
+[working to resolve this issue](https://github.com/stacklok/codegate/issues/1005).
+
+**DeepSeek models**: there is a bug in the current version (v0.8.x) of Continue
+affecting DeepSeek models (ex: `deepseek/deepseek-r1`) To resolve this, switch
+to the pre-release version (v0.9.x) of the Continue extension.
+
+:::
+
+First, configure your [provider(s)](../features/muxing.mdx#add-a-provider) and
+select a model for each of your
+[workspace(s)](../features/workspaces.mdx#manage-workspaces) in the CodeGate
+dashboard.
+
+Configure Continue as shown. Note, the `model` and `apiKey` settings are
+required by Continue, but their value is not used.
+
+```json title="~/.continue/config.json"
+{
+  "models": [
+    {
+      "title": "CodeGate-Mux",
+      "provider": "openai",
+      "model": "fake-value-not-used",
+      "apiKey": "fake-value-not-used",
+      "apiBase": "http://localhost:8989/v1/mux"
+    }
+  ],
+  "modelRoles": {
+    "default": "CodeGate-Mux",
+    "summarize": "CodeGate-Mux"
+  },
+  "tabAutocompleteModel": {
+    "title": "CodeGate-Mux-Autocomplete",
+    "provider": "openai",
+    "model": "fake-value-not-used",
+    "apiKey": "fake-value-not-used",
+    "apiBase": "http://localhost:8989/v1/mux"
+  }
+}
+```
+
+</TabItem>
+<TabItem value="anthropic" label="Anthropic">
+
+You need an [Anthropic API](https://www.anthropic.com/api) account to use this
+provider.
+
+Replace `MODEL_NAME` with the Anthropic model you want to use. We recommend
+`claude-3-5-sonnet-latest`.
+
+Replace `YOUR_API_KEY` with your
+[Anthropic API key](https://console.anthropic.com/settings/keys).
+
+```json title="~/.continue/config.json"
+{
+  "models": [
+    {
+      "title": "CodeGate-Anthropic",
+      "provider": "anthropic",
+      "model": "MODEL_NAME",
+      "apiKey": "YOUR_API_KEY",
+      "apiBase": "http://localhost:8989/anthropic"
+    }
+  ],
+  "modelRoles": {
+    "default": "CodeGate-Anthropic",
+    "summarize": "CodeGate-Anthropic"
+  },
+  "tabAutocompleteModel": {
+    "title": "CodeGate-Anthropic-Autocomplete",
+    "provider": "anthropic",
+    "model": "MODEL_NAME",
+    "apiKey": "YOUR_API_KEY",
+    "apiBase": "http://localhost:8989/anthropic"
+  }
+}
+```
+
+</TabItem>
+<TabItem value="ollama" label="Ollama">
+
+You need Ollama installed on your local system with the server running
+(`ollama serve`) to use this provider.
+
+CodeGate connects to `http://host.docker.internal:11434` by default. If you
+changed the default Ollama server port or to connect to a remote Ollama
+instance, launch CodeGate with the `CODEGATE_OLLAMA_URL` environment variable
+set to the correct URL. See [Configure CodeGate](../how-to/configure.md).
+
+Replace `MODEL_NAME` with the names of model(s) you have installed locally using
+`ollama pull`. See Continue's
+[Ollama provider documentation](https://docs.continue.dev/customize/model-providers/ollama).
+
+We recommend the [Qwen2.5-Coder](https://ollama.com/library/qwen2.5-coder)
+series of models. Our minimum recommendation is:
+
+- `qwen2.5-coder:7b` for chat
+- `qwen2.5-coder:1.5b` for autocomplete
+
+These models balance performance and quality for typical systems with at least 4
+CPU cores and 16GB of RAM. If you have more compute resources available, our
+experimentation shows that larger models do yield better results.
+
+```json title="~/.continue/config.json"
+{
+  "models": [
+    {
+      "title": "CodeGate-Ollama",
+      "provider": "ollama",
+      "model": "MODEL_NAME",
+      "apiBase": "http://localhost:8989/ollama"
+    }
+  ],
+  "modelRoles": {
+    "default": "CodeGate-Ollama",
+    "summarize": "CodeGate-Ollama"
+  },
+  "tabAutocompleteModel": {
+    "title": "CodeGate-Ollama-Autocomplete",
+    "provider": "ollama",
+    "model": "MODEL_NAME",
+    "apiBase": "http://localhost:8989/ollama"
+  }
+}
+```
+
+</TabItem>
+<TabItem value="openai" label="OpenAI">
+
+You need an [OpenAI API](https://openai.com/api/) account to use this provider.
+
+Replace `MODEL_NAME` with the OpenAI model you want to use. We recommend
+`gpt-4o`.
+
+Replace `YOUR_API_KEY` with your
+[OpenAI API key](https://platform.openai.com/api-keys).
+
+```json title="~/.continue/config.json"
+{
+  "models": [
+    {
+      "title": "CodeGate-OpenAI",
+      "provider": "openai",
+      "model": "MODEL_NAME",
+      "apiKey": "YOUR_API_KEY",
+      "apiBase": "http://localhost:8989/openai"
+    }
+  ],
+  "modelRoles": {
+    "default": "CodeGate-OpenAI",
+    "summarize": "CodeGate-OpenAI"
+  },
+  "tabAutocompleteModel": {
+    "title": "CodeGate-OpenAI-Autocomplete",
+    "provider": "openai",
+    "model": "MODEL_NAME",
+    "apiKey": "YOUR_API_KEY",
+    "apiBase": "http://localhost:8989/openai"
+  }
+}
+```
+
+</TabItem>
+<TabItem value="openrouter" label="OpenRouter">
+
+OpenRouter is a unified interface for hundreds of commercial and open source
+models. You need an [OpenRouter](https://openrouter.ai/) account to use this
+provider.
+
+:::info Known issues
+
+**DeepSeek models**: there is a bug in the current version (v0.8.x) of Continue
+affecting DeepSeek models (ex: `deepseek/deepseek-r1`) To resolve this, switch
+to the pre-release version (v0.9.x) of the Continue extension.
+
+:::
+
+Replace `MODEL_NAME` with one of the
+[available models](https://openrouter.ai/models), for example
+`anthropic/claude-3.5-sonnet`.
+
+Replace `YOUR_API_KEY` with your
+[OpenRouter API key](https://openrouter.ai/keys).
+
+```json title="~/.continue/config.json"
+{
+  "models": [
+    {
+      "title": "CodeGate-OpenRouter",
+      "provider": "openrouter",
+      "model": "MODEL_NAME",
+      "apiKey": "YOUR_API_KEY",
+      "apiBase": "http://localhost:8989/openrouter"
+    }
+  ],
+  "modelRoles": {
+    "default": "CodeGate-OpenRouter",
+    "summarize": "CodeGate-OpenRouter"
+  }
+}
+```
+
+</TabItem>
+<TabItem value="vllm" label="vLLM">
+
+You need a
+[vLLM server](https://docs.vllm.ai/en/latest/serving/openai_compatible_server.html)
+running locally or access to a remote server to use this provider.
+
+CodeGate connects to `http://localhost:8000` by default. If you changed the
+default Ollama server port or to connect to a remote Ollama instance, launch
+CodeGate with the `CODEGATE_VLLM_URL` environment variable set to the correct
+URL. See [Configure CodeGate](../how-to/configure.md).
+
+A vLLM server hosts a single model. Continue automatically selects the available
+model, so the `model` parameter is not required. See Continue's
+[vLLM provider guide](https://docs.continue.dev/customize/model-providers/more/vllm)
+for more information.
+
+If your server requires an API key, replace `YOUR_API_KEY` with the key.
+Otherwise, remove the `apiKey` parameter from both sections.
+
+```json title="~/.continue/config.json"
+{
+  "models": [
+    {
+      "title": "CodeGate-vLLM",
+      "provider": "vllm",
+      "apiKey": "YOUR_API_KEY",
+      "apiBase": "http://localhost:8989/vllm"
+    }
+  ],
+  "modelRoles": {
+    "default": "CodeGate-vLLM",
+    "summarize": "CodeGate-vLLM"
+  },
+  "tabAutocompleteModel": {
+    "title": "CodeGate-vLLM-Autocomplete",
+    "provider": "vllm",
+    "apiKey": "YOUR_API_KEY",
+    "apiBase": "http://localhost:8989/vllm"
+  }
+}
+```
+
+</TabItem>
+<TabItem value="llamacpp" label="llama.cpp">
+
+:::note Performance
+
+Docker containers on macOS cannot access the GPU, which impacts the performance
+of llama.cpp in CodeGate. For better performance on macOS, we recommend using a
+standalone Ollama installation.
+
+:::
+
+CodeGate has built-in support for llama.ccp. This is considered an advanced
+option, best suited to quick experimentation with various coding models.
+
+To use this provider, download your desired model file in GGUF format from the
+[Hugging Face library](https://huggingface.co/models?library=gguf&sort=trending).
+Then copy it into the `/app/codegate_volume/models` directory in the CodeGate
+container. To persist models between restarts, run CodeGate with a Docker volume
+as shown in the
+[recommended configuration](../how-to/install.mdx#recommended-settings).
+
+Example using huggingface-cli to download our recommended models for chat (at
+least a 7B model is recommended for best results) and autocomplete (a 1.5B or 3B
+model is recommended for performance):
+
+```bash
+# For chat functions
+huggingface-cli download Qwen/Qwen2.5-7B-Instruct-GGUF qwen2.5-7b-instruct-q5_k_m.gguf --local-dir .
+docker cp qwen2.5-7b-instruct-q5_k_m.gguf codegate:/app/codegate_volume/models/
+
+# For autocomplete functions
+huggingface-cli download Qwen/Qwen2.5-1.5B-Instruct-GGUF qwen2.5-1.5b-instruct-q5_k_m.gguf --local-dir .
+docker cp qwen2.5-1.5b-instruct-q5_k_m.gguf codegate:/app/codegate_volume/models/
+```
+
+In the Continue config file, replace `MODEL_NAME` with the file name without the
+.gguf extension, for example `qwen2.5-coder-7b-instruct-q5_k_m`.
+
+```json title="~/.continue/config.json"
+{
+  "models": [
+    {
+      "title": "CodeGate-llama.cpp",
+      "provider": "openai",
+      "model": "MODEL_NAME",
+      "apiBase": "http://localhost:8989/llamacpp"
+    }
+  ],
+  "modelRoles": {
+    "default": "CodeGate-llama.cpp",
+    "summarize": "CodeGate-llama.cpp"
+  },
+  "tabAutocompleteModel": {
+    "title": "CodeGate-llama.cpp-Autocomplete",
+    "provider": "openai",
+    "model": "MODEL_NAME",
+    "apiBase": "http://localhost:8989/llamacpp"
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
+## Verify configuration
+
+To verify that you've successfully connected Continue to CodeGate, open the
+Continue chat and type `codegate version`. You should receive a response like
+"CodeGate version 0.1.13":
+
+<ThemedImage
+  alt='Verify Continue integration'
+  sources={{
+    light: useBaseUrl('/img/integrations/continue-codegate-version-light.webp'),
+    dark: useBaseUrl('/img/integrations/continue-codegate-version-dark.webp'),
+  }}
+  width={'494px'}
+/>
+
+Try asking CodeGate about a known malicious Python package:
+
+```plain title="Continue chat"
+Tell me how to use the invokehttp package from PyPI
+```
+
+CodeGate responds with a warning and a link to the Stacklok Insight report about
+this package:
+
+```plain title="Continue chat"
+Warning: CodeGate detected one or more malicious, deprecated or archived packages.
+
+ • invokehttp: https://www.insight.stacklok.com/report/pypi/invokehttp
+
+The `invokehttp` package from PyPI has been identified as malicious and should
+not be used. Please avoid using this package and consider using a trusted
+alternative such as `requests` for making HTTP requests in Python.
+
+Here is an example of how to use the `requests` package:
+
+...
+```
+
+## Next steps
+
+Learn more about CodeGate's features and how to use them:
+
+- [Access the dashboard](../how-to/dashboard.md)
+- [CodeGate features](../features/index.mdx)
+
+
+ This is the content for the doc docs/integrations/copilot.mdx 
+
+ ---
+title: Use CodeGate with GitHub Copilot
+description: Configure your IDE to proxy Copilot traffic
+sidebar_label: GitHub Copilot
+sidebar_position: 50
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import ThemedImage from '@theme/ThemedImage';
+
+[GitHub Copilot](https://github.com/features/copilot) is an AI coding assistant
+developed by GitHub and OpenAI. The Copilot plugin works with Visual Studio Code
+(VS Code) and JetBrains IDEs.
+
+:::note
+
+Currently, CodeGate only works with Copilot in VS Code. JetBrains IDEs do not
+support HTTPS proxy configurations. If you would like to use CodeGate with
+Copilot in JetBrains IDEs, please add a :+1: to
+[this issue](https://github.com/stacklok/codegate/issues/383) or let us know on
+[Discord](https://discord.gg/stacklok).
+
+:::
+
+:::info
+
+This guide assumes you have an active subscription to GitHub Copilot and have
+installed the IDE extension.
+
+:::
+
+CodeGate works as a secure HTTP proxy to intercept and modify traffic between
+GitHub Copilot and your IDE.
+
+```mermaid
+flowchart LR
+  Plugin[Copilot IDE<br>Plugin]
+  CodeGate["CodeGate<br>container<br>(localhost)"]
+  Copilot[GitHub<br>Copilot]
+  Plugin -->|"https<br>8990"| CodeGate
+  CodeGate -->|"https<br>443"| Copilot
+```
+
+## Launch parameters
+
+Several additional Docker parameters are required for Copilot support when you
+launch CodeGate. If already have CodeGate running, remove the existing container
+first with `docker rm -f codegate`.
+
+1. The CodeGate HTTP proxy port (8990) must be mapped to your host along with
+   the CodeGate API and UI ports.\
+   Add `-p 8990:8990` to your `docker run` command.
+
+1. CodeGate generates a self-signed Certificate Authority (CA) at startup which
+   is used to maintain a secure end-to-end connection with Copilot.
+
+   To prevent the certificate from changing on each restart, launch CodeGate
+   with a persistent data volume. To do this, make sure your `docker run`
+   command includes the `--mount` parameter:
+
+   `--mount type=volume,src=codegate_volume,dst=/app/codegate_volume`
+
+This example binds the HTTP proxy port to the default 8990 on your host and
+creates a volume named `codegate_volume` mounted to `/app/codegate_volume`
+inside the container:
+
+<Tabs groupId="os">
+<TabItem value="macos" label="macOS / Linux" default>
+```bash {2-3}
+docker run --name codegate -d -p 8989:8989 -p 9090:9090 \
+  -p 8990:8990 \
+  --mount type=volume,src=codegate_volume,dst=/app/codegate_volume \
+  --restart unless-stopped ghcr.io/stacklok/codegate:latest
+```
+</TabItem>
+<TabItem value="windows" label="Windows (PowerShell)">
+```shell {2-3}
+docker run --name codegate -d -p 8989:8989 -p 9090:9090 `
+  -p 8990:8990 `
+  --mount type=volume,src=codegate_volume,dst=/app/codegate_volume `
+  --restart unless-stopped ghcr.io/stacklok/codegate:latest
+```
+
+</TabItem>
+</Tabs>
+
+## Trust the CodeGate CA certificate
+
+To establish a secure end-to-end connection between your IDE, CodeGate, and the
+Copilot service, you need to add CodeGate's CA certificate to your trusted root
+certificates. Decrypted traffic stays on your local machine and never leaves the
+CodeGate container unencrypted.
+
+<details>
+<summary>More about certificate security</summary>
+
+<h3 id='#is-this-certificate-safe'>
+  Is this certificate safe to install on my machine?
+</h3>
+
+**Local-only:** CodeGate runs entirely on your machine within an isolated
+container, ensuring all data processing stays local without any external
+transmissions.
+
+**Secure certificate handling:** This custom CA is locally generated and
+managed. CodeGate developers have no access to it.
+
+**No external communications:** CodeGate is designed with no capability to call
+home or communicate with external servers, outside of those requested by the IDE
+or Agent.
+
+<h3 id='#key-security-features'>Key security features</h3>
+
+**Per-domain certificate generation**
+
+Instead of using wildcard certificates, CodeGate generates a unique certificate
+for each domain. This approach minimizes security risks by limiting the impact
+of any single certificate compromise.
+
+**High-strength encryption with 4096-bit RSA keys**
+
+CodeGate utilizes 4096-bit RSA keys for certificate authority operations,
+providing enhanced security compared to standard 2048-bit keys. The increased
+key length significantly reduces the risk of brute-force attacks, ensuring
+long-term protection for your data. To balance performance, 2048-bit keys are
+used for server certificates.
+
+**Secure SSL/TLS configuration**
+
+CodeGate's SSL context is configured to enforce the latest security standards,
+including strong cipher suites and disabling outdated protocols. This ensures
+secure and efficient encrypted communications.
+
+**Certificate caching and management**
+
+Certificates are cached efficiently to optimize performance without compromising
+security. Additionally, mechanisms are in place to manage certificate lifecycle
+and prevent resource exhaustion.
+
+</details>
+
+### Install certificate from the dashboard
+
+You can download the CodeGate CA certificate file from the CodeGate dashboard.
+Open the dashboard in your browser: http://localhost:9090
+
+From the **Certificates** menu choose **Download certificates**, then click the
+**Download certificate** button. Follow the OS-specific instructions on the page
+to import the certificate to your trust store.
+
+### Install certificate from the CLI
+
+You can also install the CA certificate using the CLI.
+
+:::note
+
+Wait 20-30 seconds for the CodeGate container to finish initializing before
+starting this step. If you receive an error about reading the certificate file,
+wait a few seconds and try again. If this persists, check the CodeGate container
+logs for errors.
+
+:::
+
+<Tabs groupId="os">
+<TabItem value="macos" label="macOS" default>
+Run the following from a terminal:
+
+```bash
+docker cp codegate:/app/codegate_volume/certs/ca.crt ./codegate.crt
+security add-trusted-cert -r trustRoot -p ssl -p basic -k ~/Library/Keychains/login.keychain ./codegate.crt
+```
+
+Enter your password when prompted.
+
+</TabItem>
+<TabItem value="windows" label="Windows">
+Run the following from a PowerShell prompt:
+
+```powershell
+docker cp codegate:/app/codegate_volume/certs/ca.crt .\codegate.crt
+Import-Certificate -FilePath ".\codegate.crt" -CertStoreLocation Cert:\CurrentUser\Root
+```
+
+</TabItem>
+<TabItem value="linux" label="Linux">
+Prerequisite: the `certutil` tool must be available on your system.
+- Ubuntu/Debian: `sudo apt install libnss3-tools`
+- RHEL/Fedora: `sudo dnf install nss-tools`
+
+Run the following from a terminal:
+
+```bash
+docker cp codegate:/app/codegate_volume/certs/ca.crt ./codegate.crt
+certutil -d sql:$HOME/.pki/nssdb -A -t "C,," -n CodeGate-CA -i ./codegate.crt
+```
+
+</TabItem>
+</Tabs>
+
+## Configure VS Code
+
+Finally, configure VS Code to use CodeGate as an HTTP proxy.
+
+In VS Code, open the Command Palette (<kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>
+on macOS or <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> on Windows/Linux) and
+search for the **Preferences: Open User Settings (JSON)** command.
+
+Append the following settings to your configuration:
+
+```json title="settings.json"
+{
+  // ... Existing settings ... //
+
+  // Note: you may need to add a comma after the last line of your existing settings if not already present
+
+  "http.proxy": "https://localhost:8990",
+  "http.proxyStrictSSL": true,
+  "http.proxySupport": "on",
+  "http.systemCertificates": true,
+  "github.copilot.advanced": {
+    "debug.useNodeFetcher": true,
+    "debug.useElectronFetcher": true,
+    "debug.testOverrideProxyUrl": "https://localhost:8990",
+    "debug.overrideProxyUrl": "https://localhost:8990"
+  }
+}
+```
+
+## Verify configuration
+
+To verify that you've successfully connected Copilot to CodeGate, open the
+Copilot Chat (not Copilot Edits) and type `codegate version`. You should receive
+a response like "CodeGate version 0.1.13".
+
+:::note
+
+There is a [known issue](https://github.com/stacklok/codegate/issues/1061) with
+`codegate` commands in Copilot chat if you have a file included in the context.
+Close all open files or use the eye icon in the chat input to disable the
+current file context, otherwise Copilot responds based on the file you have open
+instead of returning the command result.
+
+:::
+
+<ThemedImage
+  alt='Verify Copilot integration'
+  sources={{
+    light: useBaseUrl('/img/integrations/copilot-codegate-version-light.webp'),
+    dark: useBaseUrl('/img/integrations/copilot-codegate-version-dark.webp'),
+  }}
+  width={'494px'}
+/>
+
+Try asking CodeGate about a known malicious Python package:
+
+```plain title="Copilot chat"
+Tell me how to use the invokehttp package from PyPI
+```
+
+CodeGate responds with a warning and a link to the Stacklok Insight report about
+this package:
+
+```plain title="Copilot chat"
+Warning: CodeGate detected one or more malicious, deprecated or archived packages.
+
+ • invokehttp: https://www.insight.stacklok.com/report/pypi/invokehttp
+
+The `invokehttp` package from PyPI has been identified as malicious and should
+not be used. Please avoid using this package and consider using a trusted
+alternative such as `requests` for making HTTP requests in Python.
+
+Here is an example of how to use the `requests` package:
+
+...
+```
+
+## Troubleshooting
+
+<details>
+  <summary>**Issue**: Copilot in VS Code does not work with Dev Containers</summary>
+
+**Details:** The Copilot extensions load within the Dev Container context by
+default, but the container cannot reach the CodeGate proxy directly and does not
+trust the CodeGate certificate.
+
+**Solution:** The simplest solution which doesn't require modifications to the
+devcontainer configuration in your project is to force the Copilot extensions to
+run in the UI context instead of remotely. Add the following to your **VS Code
+User Settings** file:
+
+```json title="settings.json"
+  "remote.extensionKind": {
+    "GitHub.copilot": ["ui"],
+    "GitHub.copilot-chat": ["ui"]
+  }
+```
+
+</details>
+
+## Next steps
+
+Learn more about CodeGate's features and how to use them:
+
+- [Access the dashboard](../how-to/dashboard.md)
+- [CodeGate features](../features/index.mdx)
+
+## Remove the CodeGate CA certificate
+
+import RemoveCert from '../partials/_remove-cert.mdx';
+
+If you decide to stop using CodeGate, remove the proxy settings from your
+configuration and follow these steps to remove the CA certificate:
+
+<RemoveCert />
+
+
+ This is the content for the doc docs/integrations/index.mdx 
+
+ ---
+title: CodeGate integrations
+description: Integrate CodeGate with your favorite AI coding tools
+---
+
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />
+
+
+ This is the content for the doc docs/integrations/kodu.mdx 
+
+ ---
+title: Use CodeGate with Claude Coder by Kodu.ai
+description: Configure the Kodu / Claude Coder extension for VS Code
+sidebar_label: Kodu / Claude Coder
+sidebar_position: 60
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import ThemedImage from '@theme/ThemedImage';
+
+[Claude Coder](https://www.kodu.ai/extension) by Kodu.ai is an AI coding agent
+extension for Visual Studio Code that can help programmers of all skill levels
+take their project from idea to execution.
+
+CodeGate supports OpenAI-compatible APIs and OpenRouter with Claude Coder.
+
+You can also configure [CodeGate muxing](../features/muxing.mdx) to select your
+provider and model using [workspaces](../features/workspaces.mdx).
+
+## Install the Claude Coder extension
+
+The Claude Coder extension is available in the
+[Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=kodu-ai.claude-dev-experimental).
+
+Install the extension using the **Install** link on the Marketplace page or
+search for "Claude Coder" or "Kodu" in the Extensions panel within VS Code.
+
+You can also install from the CLI:
+
+```bash
+code --install-extension kodu-ai.claude-dev-experimental
+```
+
+If you need help, see
+[Managing Extensions](https://code.visualstudio.com/docs/editor/extension-marketplace)
+in the VS Code documentation.
+
+## Configure Claude Coder to use CodeGate
+
+import KoduProviders from '../partials/_kodu-providers.mdx';
+
+1. Open the Claude Coder extension sidebar from the VS Code Activity Bar and
+   open its settings using the gear icon.
+
+1. On the **Preferences** tab, scroll down and click the link next to "Want to
+   use a custom provider?"
+
+   <ThemedImage
+     alt='Claude Coder extension settings'
+     sources={{
+       light: useBaseUrl('/img/integrations/kodu-settings-light.webp'),
+       dark: useBaseUrl('/img/integrations/kodu-settings-dark.webp'),
+     }}
+     width={'480px'}
+   />
+
+1. Select your provider and configure as detailed here:
+
+   <KoduProviders />
+
+1. Click **Save Settings** and confirm that you want to apply the model.
+
+## Verify configuration
+
+To verify that you've successfully connected Claude Coder / Kodu to CodeGate,
+start a new task in the Claude Coder sidebar and type `codegate version`. You
+should receive a response like "CodeGate version: v0.1.15":
+
+<ThemedImage
+  alt='Claude Coder verification'
+  sources={{
+    light: useBaseUrl('/img/integrations/kodu-codegate-version-light.webp'),
+    dark: useBaseUrl('/img/integrations/kodu-codegate-version-dark.webp'),
+  }}
+  width={'520px'}
+/>
+
+Start a new task and try asking CodeGate about a known malicious Python package:
+
+```plain title="Claude Coder chat"
+Tell me how to use the invokehttp package from PyPI
+```
+
+CodeGate responds with a warning and a link to the Stacklok Insight report about
+this package:
+
+```plain title="Claude Coder chat"
+Warning: CodeGate detected one or more malicious, deprecated or archived packages.
+
+ • invokehttp: https://www.insight.stacklok.com/report/pypi/invokehttp
+
+The `invokehttp` package from PyPI has been identified as malicious and should
+not be used. Please avoid using this package and consider using a trusted
+alternative such as `requests` for making HTTP requests in Python.
+
+Here is an example of how to use the `requests` package:
+
+...
+```
+
+## Next steps
+
+Learn more about CodeGate's features and how to use them:
+
+- [Access the dashboard](../how-to/dashboard.md)
+- [CodeGate features](../features/index.mdx)
+
+
+ This is the content for the doc docs/integrations/open-interpreter.mdx 
+
+ ---
+title: Use CodeGate with Open Interpreter
+description: Configure Open Interpreter to use CodeGate
+sidebar_label: Open Interpreter
+sidebar_position: 70
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+[Open Interpreter](https://github.com/openinterpreter/open-interpreter) lets
+LLMs run code locally through a ChatGPT-like interface in your terminal.
+
+CodeGate works with [OpenAI](https://openai.com/api/) and compatible APIs
+through Open Interpreter.
+
+You can also configure [CodeGate muxing](../features/muxing.mdx) to select your
+provider and model using [workspaces](../features/workspaces.mdx).
+
+:::note
+
+This guide assumes you have already installed Open Interpreter using their
+[installation instructions](https://docs.openinterpreter.com/getting-started/setup).
+
+:::
+
+## Configure Open Interpreter to use CodeGate
+
+To configure Open Interpreter to send requests through CodeGate, run
+`interpreter` with the
+[API base setting](https://docs.openinterpreter.com/settings/all-settings#api-base)
+set to CodeGate's local API port, `http://localhost:8989/<provider>`.
+
+<Tabs groupId="provider" queryString="provider">
+<TabItem value="mux" label="CodeGate muxing" default>
+First, configure your [provider(s)](../features/muxing.mdx#add-a-provider) and
+select a model for each of your
+[workspace(s)](../features/workspaces.mdx#manage-workspaces) in the CodeGate dashboard.
+
+When you run `interpreter`, the API key parameter is required but the value is
+not used. The `--model` setting must start with `openai/` but the actual model
+is determined by your CodeGate workspace.
+
+  <Tabs groupId="interpreter-version">
+    <TabItem value="current" label="Open Interpreter v0.4.x" default>
+      ```bash
+      interpreter --api_base http://localhost:8989/v1/mux --api_key fake-value-not-used --model openai/fake-value-not-used
+      ```
+
+    </TabItem>
+    <TabItem value="dev" label="v1.0 dev branch">
+      If you are running Open Interpreter's v1.0
+      [development branch](https://github.com/OpenInterpreter/open-interpreter/tree/development):
+
+      ```bash
+      interpreter --api-base http://localhost:8989/v1/mux --api-key fake-value-not-used --model openai/fake-value-not-used
+      ```
+
+    </TabItem>
+
+  </Tabs>
+</TabItem>
+<TabItem value="openai" label="OpenAI">
+You need an [OpenAI API](https://openai.com/api/) account to use this provider.
+To use a different OpenAI-compatible endpoint, set the `CODEGATE_OPENAI_URL`
+[configuration parameter](../how-to/configure.md) when you launch CodeGate.
+
+  <Tabs groupId="interpreter-version">
+    <TabItem value="current" label="Open Interpreter v0.4.x" default>
+      ```bash
+      interpreter --api_base http://localhost:8989/openai --api_key YOUR_API_KEY --model MODEL_NAME
+      ```
+
+    </TabItem>
+    <TabItem value="dev" label="v1.0 dev branch">
+      If you are running Open Interpreter's v1.0
+      [development branch](https://github.com/OpenInterpreter/open-interpreter/tree/development):
+
+      ```bash
+      interpreter --api-base http://localhost:8989/openai --api-key YOUR_API_KEY --model MODEL_NAME
+      ```
+
+    </TabItem>
+
+  </Tabs>
+
+Replace `YOUR_API_KEY` with your OpenAI API key, and `MODEL_NAME` with your
+desired model, like `openai/gpt-4o-mini`.
+
+</TabItem>
+</Tabs>
+
+:::info
+
+The `--model` parameter value must start with `openai/` for CodeGate to properly
+handle the request.
+
+:::
+
+## Verify configuration
+
+To verify that you've successfully connected Open Interpreter to CodeGate, type
+`codegate version` into the Open Interpreter chat. You should receive a response
+like "CodeGate version 0.1.16".
+
+## Next steps
+
+Learn more about [CodeGate's features](../features/index.mdx) and explore the
+[dashboard](../how-to/dashboard.md).
+
+
+ This is the content for the doc docs/partials/_aider-providers.mdx 
+
+ {/* This content is pulled out as an include because Prettier can't handle the indentation needed to get this to appear in the right spot under a list item. */}
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+import LocalModelRecommendation from './_local-model-recommendation.md';
+
+<Tabs groupId="provider" queryString="provider">
+<TabItem value="mux" label="CodeGate muxing" default>
+First, configure your [provider(s)](../features/muxing.mdx#add-a-provider) and
+select a model for each of your
+[workspace(s)](../features/workspaces.mdx#manage-workspaces) in the CodeGate dashboard.
+
+Run aider with the OpenAI base URL set to `http://localhost:8989/v1/mux`. You
+can do this with the `OPENAI_API_BASE` environment variable or on the command
+line as shown below.
+
+The `--openai-api-key` parameter is required but the value is not used. The
+`--model` setting must start with `openai/` but the actual model is determined
+by your CodeGate workspace.
+
+```bash
+aider --openai-api-base http://localhost:8989/v1/mux --openai-api-key fake-value-not-used --model openai/fake-value-not-used
+```
+
+</TabItem>
+<TabItem value="ollama" label="Ollama">
+
+You need Ollama installed on your local system with the server running
+(`ollama serve`) to use this provider.
+
+CodeGate connects to `http://host.docker.internal:11434` by default. If you
+changed the default Ollama server port or to connect to a remote Ollama
+instance, launch CodeGate with the `CODEGATE_OLLAMA_URL` environment variable
+set to the correct URL. See [Configure CodeGate](../how-to/configure.md).
+
+Before you run aider, set the Ollama base URL to CodeGate's API port using an
+environment variable. Alternately, use one of aider's other
+[supported configuration methods](https://aider.chat/docs/config/api-keys.html)
+to set the corresponding values.
+
+<Tabs groupId="os">
+<TabItem value="macos" label="macOS / Linux" default>
+
+```bash
+export OLLAMA_API_BASE=http://localhost:8989/ollama
+```
+
+:::note
+
+To persist this setting, add it to your shell profile (e.g., `~/.bashrc` or
+`~/.zshrc`) or use one of's aider's other
+[supported configuration methods](https://aider.chat/docs/config/api-keys.html).
+
+:::
+
+</TabItem>
+<TabItem value="windows" label="Windows">
+
+```bash
+setx OLLAMA_API_BASE http://localhost:8989/ollama
+```
+
+:::note
+
+Restart your shell after running `setx`.
+
+:::
+
+</TabItem>
+</Tabs>
+
+Then run aider:
+
+```bash
+aider --model ollama_chat/<MODEL_NAME>
+```
+
+Replace `<MODEL_NAME>` with the name of a coding model you have installed
+locally using `ollama pull`.
+
+<LocalModelRecommendation />
+
+For more information, see the
+[aider docs for connecting to Ollama](https://aider.chat/docs/llms/ollama.html).
+
+</TabItem>
+<TabItem value="openai" label="OpenAI">
+
+You need an [OpenAI API](https://openai.com/api/) account to use this provider.
+To use a different OpenAI-compatible endpoint, set the `CODEGATE_OPENAI_URL`
+[configuration parameter](../how-to/configure.md#config-parameters).
+
+Before you run aider, set environment variables for your API key and to set the
+API base URL to CodeGate's API port. Alternately, use one of aider's other
+[supported configuration methods](https://aider.chat/docs/config/api-keys.html)
+to set the corresponding values.
+
+<Tabs groupId="os">
+<TabItem value="macos" label="macOS / Linux" default>
+
+```bash
+export OPENAI_API_KEY=<YOUR_API_KEY>
+export OPENAI_API_BASE=http://localhost:8989/openai
+```
+
+:::note
+
+To persist these variables, add them to your shell profile (e.g., `~/.bashrc` or
+`~/.zshrc`).
+
+:::
+
+</TabItem>
+<TabItem value="windows" label="Windows">
+
+```bash
+setx OPENAI_API_KEY <YOUR_API_KEY>
+setx OPENAI_API_BASE http://localhost:8989/openai
+```
+
+:::note
+
+Restart your shell after running `setx`.
+
+:::
+
+</TabItem>
+</Tabs>
+
+Replace `<YOUR_API_KEY>` with your
+[OpenAI API key](https://platform.openai.com/api-keys).
+
+Then run `aider` as normal. For more information, see the
+[aider docs for connecting to OpenAI](https://aider.chat/docs/llms/openai.html).
+
+</TabItem>
+</Tabs>
+
+
+ This is the content for the doc docs/partials/_cline-providers.mdx 
+
+ {/* This content is pulled out as an include because Prettier can't handle the indentation needed to get this to appear in the right spot under a list item. */}
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import ThemedImage from '@theme/ThemedImage';
+
+import LocalModelRecommendation from './_local-model-recommendation.md';
+
+<Tabs groupId="provider" queryString="provider">
+<TabItem value="mux" label="CodeGate muxing" default>
+First, configure your [provider(s)](../features/muxing.mdx#add-a-provider) and
+select a model for each of your
+[workspace(s)](../features/workspaces.mdx#manage-workspaces) in the CodeGate dashboard.
+
+In the Cline settings, choose **OpenAI Compatible** as your provider. Set the
+**Base URL** to `http://localhost:8989/v1/mux`. Enter anything you want into the
+API key and model ID fields; these are required but not used since the actual
+provider and model is determined by your CodeGate workspace.
+
+<ThemedImage
+  alt='Cline settings for muxing'
+  sources={{
+    light: useBaseUrl('/img/integrations/cline-provider-mux-light.webp'),
+    dark: useBaseUrl('/img/integrations/cline-provider-mux-dark.webp'),
+  }}
+  width={'540px'}
+/>
+
+</TabItem>
+<TabItem value="anthropic" label="Anthropic">
+
+You need an [Anthropic API](https://www.anthropic.com/api) account to use this
+provider.
+
+In the Cline settings, choose **Anthropic** as your provider, enter your
+Anthropic API key, and choose your preferred model (we recommend
+`claude-3-5-sonnet-<latest>`).
+
+To enable CodeGate, enable **Use custom base URL** and enter
+`http://localhost:8989/anthropic`.
+
+<ThemedImage
+  alt='Cline settings for Anthropic'
+  sources={{
+    light: useBaseUrl('/img/integrations/cline-provider-anthropic-light.webp'),
+    dark: useBaseUrl('/img/integrations/cline-provider-anthropic-dark.webp'),
+  }}
+  width={'540px'}
+/>
+
+</TabItem>
+<TabItem value="lmstudio" label="LM Studio">
+
+You need LM Studio installed on your local system with a server running from LM
+Studio's **Developer** tab to use this provider. See the
+[LM Studio docs](https://lmstudio.ai/docs/api/server) for more information.
+
+Cline uses large prompts, so you will likely need to increase the context length
+for the model you've loaded in LM Studio. In the Developer tab, select the model
+you'll use with CodeGate, open the **Load** tab on the right and increase the
+**Context Length** to _at least_ 18k (18,432) tokens, then reload the model.
+
+<ThemedImage
+  alt='LM Studio dev server'
+  sources={{
+    light: useBaseUrl('/img/integrations/lmstudio-server-light.webp'),
+    dark: useBaseUrl('/img/integrations/lmstudio-server-dark.webp'),
+  }}
+  width={'800px'}
+/>
+
+CodeGate connects to `http://host.docker.internal:1234` by default. If you
+changed the default LM Studio server port, launch CodeGate with the
+`CODEGATE_LM_STUDIO_URL` environment variable set to the correct URL. See
+[Configure CodeGate](/how-to/configure.md).
+
+In the Cline settings, choose LM Studio as your provider and set the **Base
+URL** to `http://localhost:8989/lm_studio`.
+
+Set the **Model ID** to `lm_studio/<MODEL_NAME>`, where `<MODEL_NAME>` is the
+name of the model you're serving through LM Studio (shown in the Developer tab),
+for example `lm_studio/qwen2.5-coder-7b-instruct`.
+
+<LocalModelRecommendation />
+
+<ThemedImage
+  alt='Cline settings for LM Studio'
+  sources={{
+    light: useBaseUrl('/img/integrations/cline-provider-lmstudio-light.webp'),
+    dark: useBaseUrl('/img/integrations/cline-provider-lmstudio-dark.webp'),
+  }}
+  width={'635px'}
+/>
+
+</TabItem>
+<TabItem value="ollama" label="Ollama">
+
+You need Ollama installed on your local system with the server running
+(`ollama serve`) to use this provider.
+
+CodeGate connects to `http://host.docker.internal:11434` by default. If you
+changed the default Ollama server port or to connect to a remote Ollama
+instance, launch CodeGate with the `CODEGATE_OLLAMA_URL` environment variable
+set to the correct URL. See [Configure CodeGate](/how-to/configure.md).
+
+In the Cline settings, choose **Ollama** as your provider and set the **Base
+URL** to `http://localhost:8989/ollama`.
+
+For the **Model ID**, provide the name of a coding model you have installed
+locally using `ollama pull`.
+
+<LocalModelRecommendation />
+
+<ThemedImage
+  alt='Cline settings for Ollama'
+  sources={{
+    light: useBaseUrl('/img/integrations/cline-provider-ollama-light.webp'),
+    dark: useBaseUrl('/img/integrations/cline-provider-ollama-dark.webp'),
+  }}
+  width={'540px'}
+/>
+
+</TabItem>
+<TabItem value="openai" label="OpenAI">
+
+You need an [OpenAI API](https://openai.com/api/) account to use this provider.
+To use a different OpenAI-compatible endpoint, set the `CODEGATE_OPENAI_URL`
+[configuration parameter](../how-to/configure.md) when you launch CodeGate.
+
+In the Cline settings, choose **OpenAI Compatible** as your provider, enter your
+OpenAI API key, and set your preferred model (example: `gpt-4o-mini`).
+
+To enable CodeGate, set the **Base URL** to `http://localhost:8989/openai`.
+
+<ThemedImage
+  alt='Cline settings for OpenAI'
+  sources={{
+    light: useBaseUrl('/img/integrations/cline-provider-openai-light.webp'),
+    dark: useBaseUrl('/img/integrations/cline-provider-openai-dark.webp'),
+  }}
+  width={'540px'}
+/>
+
+</TabItem>
+<TabItem value="openrouter" label="OpenRouter">
+
+You need an [OpenRouter](https://openrouter.ai/) account to use this provider.
+
+In the Cline settings, choose **OpenAI Compatible** as your provider (NOT
+OpenRouter), enter your
+[OpenRouter API key](https://openrouter.ai/settings/keys), and set your
+[preferred model](https://openrouter.ai/models) (example:
+`anthropic/claude-3.5-sonnet`).
+
+To enable CodeGate, set the **Base URL** to `http://localhost:8989/openrouter`.
+
+<ThemedImage
+  alt='Cline settings for OpenRouter'
+  sources={{
+    light: useBaseUrl('/img/integrations/cline-provider-openrouter-light.webp'),
+    dark: useBaseUrl('/img/integrations/cline-provider-openrouter-dark.webp'),
+  }}
+  width={'540px'}
+/>
+
+</TabItem>
+</Tabs>
+
+
+ This is the content for the doc docs/partials/_default-run-command.md 
+
+ ```bash
+docker run --name codegate -d -p 8989:8989 -p 9090:9090 -p 8990:8990 --mount type=volume,src=codegate_volume,dst=/app/codegate_volume --restart unless-stopped ghcr.io/stacklok/codegate:latest
+```
+
+
+ This is the content for the doc docs/partials/_kodu-providers.mdx 
+
+ {/* This content is pulled out as an include because Prettier can't handle the indentation needed to get this to appear in the right spot under a list item. */}
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs groupId="provider" queryString="provider">
+<TabItem value="mux" label="CodeGate muxing" default>
+First, configure your [provider(s)](../features/muxing.mdx#add-a-provider) and
+select a model for each of your
+[workspace(s)](../features/workspaces.mdx#manage-workspaces) in the CodeGate
+dashboard.
+
+In the **Provider Settings** settings, select **OpenAI Compatible**. Set the
+**Base URL** to `http://localhost:8989/v1/mux`.
+
+Enter anything you want into the Model ID and API key fields; these are not used
+since the actual provider and model is determined by your CodeGate workspace.
+
+</TabItem>
+<TabItem value="openai" label="OpenAI">
+
+You need an [OpenAI API](https://openai.com/api/) account to use this provider.
+To use a different OpenAI-compatible endpoint, set the `CODEGATE_OPENAI_URL`
+[configuration parameter](../how-to/configure.md) when you launch CodeGate.
+
+In the **Provider Settings** settings, select **OpenAI Compatible**. Set the
+**Base URL** to `http://localhost:8989/openai`.
+
+Enter the **Model ID** and your
+[OpenAI API key](https://platform.openai.com/api-keys). A reasoning model like
+`o1-mini` or `o3-mini` is recommended.
+
+</TabItem>
+<TabItem value="openrouter" label="OpenRouter">
+
+You need an [OpenRouter](https://openrouter.ai/) account to use this provider.
+
+In the **Provider Settings** settings, select **OpenAI Compatible**. Set the
+**Base URL** to `http://localhost:8989/openrouter`.
+
+Enter your [preferred model](https://openrouter.ai/models) for the **Model ID**
+(example: `anthropic/claude-3.5-sonnet`) and add your
+[OpenRouter API key](https://openrouter.ai/keys).
+
+</TabItem>
+</Tabs>
+
+
+ This is the content for the doc docs/partials/_local-model-recommendation.md 
+
+ We recommend the [Qwen2.5-Coder](https://ollama.com/library/qwen2.5-coder)
+series of models. Our minimum recommendation for quality results is the 7
+billion parameter (7B) version, `qwen2.5-coder:7b-instruct`. This model balances
+performance and quality for systems with at least 4 CPU cores and 16GB of RAM.
+If you have more compute resources available, our experimentation shows that
+larger models do yield better results.
+
+
+ This is the content for the doc docs/partials/_remove-cert.mdx 
+
+ import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs groupId="os">
+<TabItem value="macos" label="macOS" default>
+
+Open the Keychain Access app and delete the "CodeGate CA" certificate from the
+login keychain, or run the following from a terminal:
+
+```bash
+security delete-certificate -c "CodeGate CA" -t ~/Library/Keychains/login.keychain
+```
+
+</TabItem>
+<TabItem value="windows" label="Windows">
+
+Certificates in the CurrentUser\Root certificate store must be deleted from the
+GUI.
+
+1. In the Start menu, search for **Manage User Certificates** or run
+   (<kbd>Win</kbd>+<kbd>R</kbd>) `certmgr.msc` to open the user certificate
+   store
+1. Navigate to **Trusted Root Certification Authorities** → **Certificates**
+1. Delete the "CodeGate CA" certificate
+
+</TabItem>
+<TabItem value="linux" label="Linux">
+
+Run the following command from a terminal, then restart VS Code.
+
+```bash
+certutil -d sql:$HOME/.pki/nssdb -D -n CodeGate-CA
+```
+
+</TabItem>
+</Tabs>
+
+
+ This is the content for the doc docs/quickstart-continue.mdx 
+
+ ---
+title: Quickstart guide - Continue and Ollama
+description: Get up and running with CodeGate, Continue, and Ollama
+sidebar_label: Quickstart - Continue + Ollama
+sidebar_position: 10
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import ThemedImage from '@theme/ThemedImage';
+
+## Objective
+
+This guide will get you up and running with CodeGate in just a few minutes using
+Visual Studio Code, the open source Continue AI assistant, and a locally-hosted
+LLM using Ollama. By the end, you'll learn how CodeGate helps protect your
+privacy and improve the security of your applications.
+
+:::info
+
+CodeGate works with multiple local and hosted large language models (LLMs)
+through Continue. In this tutorial, you'll use Ollama to run a code generation
+model on your local machine.
+
+If you have access to a provider like Anthropic or OpenAI, see
+[Use CodeGate with Continue](./integrations/continue.mdx) for complete
+configuration details, then skip ahead to
+[Explore CodeGate's features](#explore-codegates-features) in this tutorial.
+
+:::
+
+## Prerequisites
+
+CodeGate runs on Windows, macOS (Apple or Intel silicon), or Linux systems.
+
+To run Ollama locally, we recommend a system with at least 4 CPU cores, 16GB of
+RAM, a GPU, and at least 12GB of free disk space for best results.
+
+CodeGate itself has modest requirements. It uses less than 1GB of RAM, minimal
+CPU and disk space, and does not require a GPU.
+
+Required software:
+
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) (or Docker
+  Engine on Linux)
+- [Ollama](https://ollama.com/download)
+  - The Ollama service must be running - `ollama serve`
+- [VS Code](https://code.visualstudio.com/) with the
+  [Continue](https://www.continue.dev/) extension
+
+Continue is an open source AI code assistant that supports a wide range of LLMs.
+
+## Start the CodeGate container
+
+Download and run the container using Docker:
+
+```bash
+docker pull ghcr.io/stacklok/codegate:latest
+docker run --name codegate -d -p 8989:8989 -p 9090:9090 --mount type=volume,src=codegate_volume,dst=/app/codegate_volume --restart unless-stopped ghcr.io/stacklok/codegate:latest
+```
+
+This pulls the latest CodeGate image from the GitHub Container Registry and
+starts the container the background with the required port bindings.
+
+To verify that CodeGate is running, open the CodeGate dashboard in your web
+browser: [http://localhost:9090](http://localhost:9090)
+
+## Install a CodeGen model
+
+Download our recommended models for chat and autocompletion, from the
+[Qwen2.5-Coder](https://ollama.com/library/qwen2.5-coder) series:
+
+```bash
+ollama pull qwen2.5-coder:7b
+ollama pull qwen2.5-coder:1.5b
+```
+
+These models balance performance and quality for typical systems with at least 4
+CPU cores and 16GB of RAM. If you have more resources available, our
+experimentation shows that larger models do yield better results.
+
+## Configure the Continue extension
+
+Next, configure Continue to send model API requests through the local CodeGate
+container.
+
+In VS Code, open the Continue extension from the sidebar.
+
+Click the gear icon in the Continue panel to open the configuration file
+(`~/.continue/config.json`).
+
+<ThemedImage
+  alt='Continue extension settings'
+  sources={{
+    light: useBaseUrl('/img/quickstart/continue-config-light.webp'),
+    dark: useBaseUrl('/img/quickstart/continue-config-dark.webp'),
+  }}
+  width={'500px'}
+/>
+
+If this is your first time using Continue, paste the following contents into the
+file and save it. If you've previously used Continue and have existing settings,
+insert or update the highlighted portions into your current configuration.
+
+```json {3-8,11-12,14-18} title="~/.continue/config.json"
+{
+  "models": [
+    {
+      "title": "CodeGate-Quickstart",
+      "provider": "ollama",
+      "model": "qwen2.5-coder:7b",
+      "apiBase": "http://localhost:8989/ollama"
+    }
+  ],
+  "modelRoles": {
+    "default": "CodeGate-Quickstart",
+    "summarize": "CodeGate-Quickstart"
+  },
+  "tabAutocompleteModel": {
+    "title": "CodeGate-Quickstart-Autocomplete",
+    "provider": "ollama",
+    "model": "qwen2.5-coder:1.5b",
+    "apiBase": "http://localhost:8989/ollama"
+  }
+}
+```
+
+The Continue extension reloads its configuration immediately when you save the
+file.
+
+You should now see the CodeGate-Quickstart model available in your Continue chat
+panel.
+
+<ThemedImage
+  alt='Continue chat model'
+  sources={{
+    light: useBaseUrl('/img/quickstart/quickstart-continue-model-light.webp'),
+    dark: useBaseUrl('/img/quickstart/quickstart-continue-model-dark.webp'),
+  }}
+  width={'600px'}
+/>
+
+Enter `codegate version` in the chat box to confirm that Continue is
+communicating with CodeGate. CodeGate responds with its version number.
+
+## Explore CodeGate's features
+
+To learn more about CodeGate's capabilities, clone the demo repository to a
+local folder on your system.
+
+```bash
+git clone https://github.com/stacklok/codegate-demonstration
+```
+
+:::warning
+
+This repo contains intentionally risky code for demonstration purposes. Do not
+run this in a production environment or use any of the included code in real
+projects.
+
+:::
+
+Open the project folder in VS Code. You can do this from the UI or in the
+terminal:
+
+```bash
+cd codegate-demonstration
+code .
+```
+
+### Protect your secrets
+
+Often while developing, you'll need to work with sensitive information like API
+keys or passwords. You've certainly taken steps to avoid checking these into
+your source repo, but they are fair game for LLMs to use as context and
+training.
+
+Open the `conf.ini` or `eth/app.json` file from the demo repo in the VS Code
+editor and examine the contents. In the Continue chat input, type `@Files` and
+select the file to include it as context, and ask Continue to explain the file.
+
+For example, using `conf.ini`:
+
+```plain title="Continue chat"
+@conf.ini Explain this file
+```
+
+CodeGate intercepts the request and transparently redacts the sensitive data
+before it leaves your machine.
+
+<ThemedImage
+  alt='Continue results identifying redacted secrets'
+  sources={{
+    light: useBaseUrl(
+      '/img/quickstart/quickstart-continue-secrets-result-light.webp'
+    ),
+    dark: useBaseUrl(
+      '/img/quickstart/quickstart-continue-secrets-result-dark.webp'
+    ),
+  }}
+  width={'600px'}
+/>
+
+Learn more in [Secrets and PII redaction](./features/secrets-redaction.md).
+
+### Assess dependency risk
+
+Open the `javascript/App.js` file from the demo repo in the VS Code editor and
+examine the `require` statements at the top. In the VS Code file browser,
+right-click the file and choose **Select Files as Context**. Then ask Continue
+to review the file.
+
+```plain title="Continue chat"
+@App.js Review this file
+```
+
+Using its up-to-date knowledge from
+[Stacklok Insight](https://www.insight.stacklok.com/), CodeGate identifies the
+malicious and deprecated packages referenced in the code.
+
+<ThemedImage
+  alt='Continue results identifying risky dependencies'
+  sources={{
+    light: useBaseUrl(
+      '/img/quickstart/quickstart-continue-dependencies-result-light.webp'
+    ),
+    dark: useBaseUrl(
+      '/img/quickstart/quickstart-continue-dependencies-result-dark.webp'
+    ),
+  }}
+  width={'600px'}
+/>
+
+Learn more in [Dependency risk awareness](./features/dependency-risk.md).
+
+### View the dashboard
+
+Open your web browser to [http://localhost:9090](http://localhost:9090) and
+explore the CodeGate dashboard.
+
+The dashboard displays security alerts and history of interactions between your
+AI assistant and the LLM. Several alerts and prompts from the previous steps in
+this tutorial should be visible now. Over time, this helps you understand how
+CodeGate is actively protecting your privacy and security.
+
+<ThemedImage
+  alt='CodeGate dashboard'
+  sources={{
+    light: useBaseUrl('/img/quickstart/quickstart-dashboard-light.webp'),
+    dark: useBaseUrl('/img/quickstart/quickstart-dashboard-dark.webp'),
+  }}
+  width={'1000px'}
+/>
+
+## Next steps
+
+Congratulations, CodeGate is now hard at work protecting your privacy and
+enhancing the security of your AI-assisted development!
+
+Check out the rest of the docs to learn more about
+[how to use CodeGate](./how-to/index.mdx) and explore all of its
+[Features](./features/index.mdx).
+
+If you have access to a hosted LLM provider like Anthropic or OpenAI, see
+[Configure Continue to use CodeGate](./integrations/continue.mdx#configure-continue-to-use-codegate)
+to learn how to use those instead of Ollama.
+
+Finally, we want to hear about your experiences using CodeGate. Join the
+`#codegate` channel on the
+[Stacklok Community Discord](https://discord.gg/stacklok) server to chat about
+the project, and let us know about any bugs or feature requests in
+[GitHub Issues](https://github.com/stacklok/codegate/issues).
+
+## Removing CodeGate
+
+Of course we hope you'll want to continue using CodeGate, but if you want to
+stop using it, follow these steps to clean up your environment.
+
+1. Stop and remove the CodeGate container and persistent data volume:
+
+   ```bash
+   docker rm -f codegate
+   docker volume rm codegate_volume
+   ```
+
+2. Remove the `apiBase` configuration entries from your Continue configuration
+   file.
+
+
+ This is the content for the doc docs/quickstart-copilot.mdx 
+
+ ---
+title: Quickstart guide - GitHub Copilot
+description: Get up and running with CodeGate and Copilot
+sidebar_label: Quickstart - GitHub Copilot
+sidebar_position: 9
+id: quickstart
+slug: /quickstart
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import ThemedImage from '@theme/ThemedImage';
+import DefaultRunCommand from './partials/_default-run-command.md';
+
+## Objective
+
+This guide will get you up and running with CodeGate in just a few minutes using
+Visual Studio Code and GitHub Copilot. By the end, you'll learn how CodeGate
+helps protect your privacy and improve the security of your applications.
+
+## Prerequisites
+
+You must have an active subscription to
+[GitHub Copilot](https://github.com/features/copilot).
+
+CodeGate runs on Windows, macOS (Apple or Intel silicon), or Linux systems.
+
+Required software:
+
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) (or Docker
+  Engine on Linux)
+- [VS Code](https://code.visualstudio.com/) with the
+  [GitHub Copilot extension](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot)
+
+## Start the CodeGate container
+
+Run CodeGate using Docker:
+
+<DefaultRunCommand />
+
+This pulls the latest CodeGate image from the GitHub Container Registry and
+starts the container the background, with the required port bindings and a
+volume for persistent data storage.
+
+To verify that CodeGate is running, open the CodeGate dashboard in your web
+browser: [http://localhost:9090](http://localhost:9090)
+
+## Install the CodeGate CA certificate
+
+To enable CodeGate, you must install its Certificate Authority (CA) into your
+certificate trust store.
+
+:::info Why is this needed?
+
+The CA certificate allows CodeGate to securely intercept and modify traffic
+between GitHub Copilot and your IDE. Decrypted traffic never leaves your local
+machine.
+
+:::
+
+To install the CodeGate certificate, open the **Certificate download** page in
+the web dashboard:
+[http://localhost:9090/certificates](http://localhost:9090/certificates)
+
+Click the **Download Certificate** button, review the security information, and
+follow the OS-specific instructions on the page to import the certificate to
+your trust store.
+
+## Configure VS Code to use CodeGate
+
+In VS Code, open the Command Palette (<kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>
+on macOS or <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> on Windows/Linux) and
+search for the **Preferences: Open User Settings (JSON)** command. Run it to
+open your VS Code settings.json file in the editor.
+
+Add the following settings to your configuration:
+
+```json title="settings.json"
+{
+  // ... Existing settings ... //
+
+  // Note: you may need to add a comma after the last line of your existing settings if not present
+
+  "http.proxy": "https://localhost:8990",
+  "http.proxyStrictSSL": true,
+  "http.proxySupport": "on",
+  "http.systemCertificates": true,
+  "github.copilot.advanced": {
+    "debug.useNodeFetcher": true,
+    "debug.useElectronFetcher": true,
+    "debug.testOverrideProxyUrl": "https://localhost:8990",
+    "debug.overrideProxyUrl": "https://localhost:8990"
+  }
+}
+```
+
+Enter `codegate version` in the Copilot chat to confirm that CodeGate is
+intercepting Copilot traffic. CodeGate responds with its version number.
+
+:::note
+
+There is a [known issue](https://github.com/stacklok/codegate/issues/1061) with
+`codegate` commands in Copilot chat if you have a file included in the context.
+Close all open files or use the eye icon in the chat input to disable the
+current file context, otherwise Copilot responds based on the file you have open
+instead of returning the command result.
+
+:::
+
+## Explore CodeGate's key features
+
+To learn more about CodeGate's capabilities, clone the demo repository to a
+local folder on your system.
+
+```bash
+git clone https://github.com/stacklok/codegate-demonstration
+```
+
+:::warning
+
+This repo contains intentionally risky code for demonstration purposes. Do not
+run this in a production environment or use any of the included code in real
+projects.
+
+:::
+
+Open the project folder in VS Code. You can do this from the UI or in the
+terminal:
+
+```bash
+cd codegate-demonstration
+code .
+```
+
+### Protect your secrets
+
+Often while developing, you'll need to work with sensitive information like API
+keys or passwords. You've certainly taken steps to avoid checking these into
+your source repo, but they are fair game for Copilot to send to its language
+models as context.
+
+Open the `conf.ini` or `eth/app.json` file from the demo repo in the VS Code
+editor. In the Copilot chat panel, observe that Copilot has automatically loaded
+the active file as context.
+
+<ThemedImage
+  alt='Copilot chat showing the current file selected'
+  sources={{
+    light: useBaseUrl(
+      '/img/quickstart/quickstart-copilot-secrets-context-light.webp'
+    ),
+    dark: useBaseUrl(
+      '/img/quickstart/quickstart-copilot-secrets-context-dark.webp'
+    ),
+  }}
+  width={'400px'}
+/>
+
+Enter this prompt into the chat:
+
+```plain title="Copilot chat"
+Explain the current file
+```
+
+CodeGate intercepts the request and transparently redacts the sensitive data
+before it leaves your machine.
+
+<ThemedImage
+  alt='Copilot results identifying redacted secrets'
+  sources={{
+    light: useBaseUrl(
+      '/img/quickstart/quickstart-copilot-secrets-result-light.webp'
+    ),
+    dark: useBaseUrl(
+      '/img/quickstart/quickstart-copilot-secrets-result-dark.webp'
+    ),
+  }}
+  width={'600px'}
+/>
+
+Learn more in [Secrets and PII redaction](./features/secrets-redaction.md).
+
+### Assess dependency risk
+
+Open the `javascript/App.js` file from the demo repo in the VS Code editor.
+Confirm that it's now the active context file in Copilot.
+
+<ThemedImage
+  alt='Copilot chat showing the current file selected'
+  sources={{
+    light: useBaseUrl(
+      '/img/quickstart/quickstart-copilot-dependencies-context-light.webp'
+    ),
+    dark: useBaseUrl(
+      '/img/quickstart/quickstart-copilot-dependencies-context-dark.webp'
+    ),
+  }}
+  width={'400px'}
+/>
+
+Enter the following prompt into the chat:
+
+```plain title="Copilot chat"
+Review this file
+```
+
+Using its up-to-date knowledge from
+[Stacklok Insight](https://www.insight.stacklok.com/), CodeGate identifies the
+malicious and deprecated packages referenced in the code.
+
+<ThemedImage
+  alt='Copilot results identifying risky dependencies'
+  sources={{
+    light: useBaseUrl(
+      '/img/quickstart/quickstart-copilot-dependencies-result-light.webp'
+    ),
+    dark: useBaseUrl(
+      '/img/quickstart/quickstart-copilot-dependencies-result-dark.webp'
+    ),
+  }}
+  width={'600px'}
+/>
+
+Learn more in [Dependency risk awareness](./features/dependency-risk.md).
+
+### View the dashboard
+
+Open your web browser to [http://localhost:9090](http://localhost:9090) and
+explore the CodeGate dashboard.
+
+The dashboard displays security alerts and history of interactions between your
+AI assistant and the LLM. Several alerts and prompts from the previous steps in
+this tutorial should be visible now. Over time, this helps you understand how
+CodeGate is actively protecting your privacy and security.
+
+<ThemedImage
+  alt='CodeGate dashboard'
+  sources={{
+    light: useBaseUrl('/img/quickstart/quickstart-dashboard-light.webp'),
+    dark: useBaseUrl('/img/quickstart/quickstart-dashboard-dark.webp'),
+  }}
+  width={'1000px'}
+/>
+
+## Next steps
+
+Congratulations, CodeGate is now hard at work protecting your privacy and
+enhancing the security of your AI-assisted development!
+
+Check out the rest of the docs to learn more about
+[how to use CodeGate](./how-to/index.mdx) and explore all of its
+[Features](./features/index.mdx).
+
+We want to hear about your experiences using CodeGate! Join the `#codegate`
+channel on the [Stacklok Community Discord](https://discord.gg/stacklok) server
+to chat about the project, and let us know about any bugs or feature requests in
+[GitHub Issues](https://github.com/stacklok/codegate/issues).
+
+## Removing CodeGate
+
+Of course we hope you'll want to continue using CodeGate, but if you want to
+stop using it, follow these steps to clean up your environment.
+
+import RemoveCert from './partials/_remove-cert.mdx';
+
+1. Remove the [proxy settings](#configure-vs-code-to-use-codegate) from your VS
+   Code configuration.
+
+1. Remove the CodeGate CA certificate from your trust store:
+
+   <RemoveCert />
+
+1. Stop and remove the CodeGate container:
+
+   ```bash
+   docker rm -f codegate
+   ```
+
+1. Delete the persistent volume:
+
+   ```bash
+   docker volume rm codegate_volume
+   ```
